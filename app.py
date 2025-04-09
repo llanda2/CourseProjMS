@@ -3,105 +3,65 @@ from dash import dcc, html, Input, Output
 import pandas as pd
 import plotly.express as px
 import os
-from datetime import datetime
-import re
-import numpy as np
-# from dotenv import load_dotenv, find_dotenv
 
 # Initialize the Dash app
 app = dash.Dash(__name__, external_stylesheets=['https://codepen.io/chriddyp/pen/bWLwgP.css'])
 server = app.server
 
-# Load mass shooting data
-data_path = os.path.join("data", "MassShootingIncidnets.csv")
+# === Load mass shooting data ===
+data_path = "mass_shootings_geocoded.csv"
 try:
-    # Handle potential typo in filename (Incidnets vs Incidents)
-    if not os.path.exists(data_path):
-        alternative_path = os.path.join("data", "MassShootingIncidents.csv")
-        if os.path.exists(alternative_path):
-            data_path = alternative_path
-
     df = pd.read_csv(data_path)
     print(f"Loaded data with {df.shape[0]} rows and {df.shape[1]} columns")
     print("Columns in dataset:", df.columns.tolist())
-
 except Exception as e:
     print(f"Error loading data: {e}")
-    # Create an empty DataFrame with expected columns
-    df = pd.DataFrame(columns=["Incident ID", "Incident Date", "State", "City Or County",
-                               "Address", "Victims Killed", "Victims Injured"])
+    df = pd.DataFrame()
 
-
-# Process the data for mapping
+# === Clean and process the data ===
 def process_data(df):
     processed_df = df.copy()
 
-    # Extract year from date for filtering
+    # Clean latitude and longitude: split and convert to float
+    if 'latitude' in processed_df.columns:
+        processed_df[['longitude', 'latitude']] = processed_df['latitude'].str.split(',', expand=True)
+        processed_df['latitude'] = pd.to_numeric(processed_df['latitude'], errors='coerce')
+        processed_df['longitude'] = pd.to_numeric(processed_df['longitude'], errors='coerce')
+
+    # Extract year from incident date
     if "Incident Date" in processed_df.columns:
         processed_df['Year'] = processed_df["Incident Date"].str.extract(r'(\d{4})')
+        processed_df['Year'] = pd.to_numeric(processed_df['Year'], errors='coerce')
 
-        # Try to convert to datetime for better sorting
-        try:
-            processed_df['Date'] = pd.to_datetime(processed_df["Incident Date"], errors='coerce')
-        except:
-            pass
+        # Convert to datetime for sorting
+        processed_df['Date'] = pd.to_datetime(processed_df["Incident Date"], errors='coerce')
 
     # Calculate total victims
     if "Victims Killed" in processed_df.columns and "Victims Injured" in processed_df.columns:
         processed_df['Total Victims'] = processed_df["Victims Killed"] + processed_df["Victims Injured"]
 
-    # We need to geocode the addresses since we don't have latitude/longitude
-    # For now, we'll use a placeholder function that returns random coordinates
-    # In a real application, you would use a geocoding service like Google Maps API, Nominatim, etc.
-
-    # Create full location string for potential geocoding
+    # Create full location string for hover info
     processed_df['Full Location'] = processed_df.apply(
-        lambda row: f"{row['Address']}, {row['City Or County']}, {row['State']}, USA"
-        if all(col in row for col in ['Address', 'City Or County', 'State']) else None,
+        lambda row: f"{row['Address']}, {row['City Or County']}, {row['State']}, USA",
         axis=1
     )
 
-    # Placeholder geocoding function (replace with actual geocoding in production)
-    def mock_geocode(locations):
-        # This is just for demonstration purposes
-        # USA rough bounding box
-        lats = np.random.uniform(25, 49, size=len(locations))
-        lons = np.random.uniform(-125, -65, size=len(locations))
-
-        # Try to make the coordinates somewhat match real locations
-        for i, loc in enumerate(locations):
-            # Extract state
-            if isinstance(loc, str) and "Texas" in loc:
-                lats[i] = np.random.uniform(26, 36)
-                lons[i] = np.random.uniform(-106, -93)
-            elif isinstance(loc, str) and "California" in loc:
-                lats[i] = np.random.uniform(32, 42)
-                lons[i] = np.random.uniform(-124, -114)
-            elif isinstance(loc, str) and "New York" in loc:
-                lats[i] = np.random.uniform(40, 45)
-                lons[i] = np.random.uniform(-80, -73)
-            # Add more states as needed
-
-        return lats, lons
-
-    # Get coordinates
-    processed_df['latitude'], processed_df['longitude'] = mock_geocode(processed_df['Full Location'])
+    # Drop rows with missing coordinates
+    processed_df = processed_df.dropna(subset=['latitude', 'longitude'])
 
     return processed_df
-
 
 # Process the data
 processed_df = process_data(df)
 
-# Get the min and max years for the slider
-if 'Year' in processed_df.columns:
-    min_year = int(processed_df['Year'].astype(float).min()) if not processed_df['Year'].isna().all() else 2020
-    max_year = int(processed_df['Year'].astype(float).max()) if not processed_df['Year'].isna().all() else 2025
+# Get min and max year for slider
+if not processed_df.empty and 'Year' in processed_df.columns:
+    min_year = int(processed_df['Year'].min())
+    max_year = int(processed_df['Year'].max())
 else:
-    min_year = 2020
-    max_year = 2025
+    min_year, max_year = 2020, 2025
 
-# App layout
+# === App Layout ===
 app.layout = html.Div([
     html.H1("Mass Shooting Incidents Map", style={'textAlign': 'center'}),
 
@@ -154,8 +114,6 @@ app.layout = html.Div([
 
     html.Div([
         html.H3("Dataset Preview"),
-        html.P(
-            "Note: This map uses simulated coordinates for demonstration. In a production environment, you would use a geocoding service to get accurate coordinates."),
         html.Div(
             style={'overflowX': 'auto'},
             children=[
@@ -167,29 +125,9 @@ app.layout = html.Div([
             ]
         )
     ], className="row"),
-
-    html.Div([
-        html.H3("Implementation Notes"),
-        html.P([
-            "This dashboard uses simulated geographic coordinates since the original data does not contain latitude/longitude information. ",
-            "For a production version, you would need to implement real geocoding using a service like Google Maps API, Nominatim (OpenStreetMap), or similar."
-        ]),
-        html.P([
-            "Steps to implement real geocoding:",
-            html.Br(),
-            "1. Use the 'Full Location' column that combines address, city, and state",
-            html.Br(),
-            "2. Send each location to a geocoding service",
-            html.Br(),
-            "3. Store the results in a cache to avoid repeated API calls",
-            html.Br(),
-            "4. Add error handling for locations that can't be geocoded"
-        ]),
-    ], className="row"),
 ])
 
-
-# Callback to update map
+# === Callbacks ===
 @app.callback(
     [Output('map-visualization', 'figure'),
      Output('incidents-count', 'children')],
@@ -198,20 +136,18 @@ app.layout = html.Div([
      Input('year-slider', 'value')]
 )
 def update_map(size_metric, color_metric, year_range):
-    # Create a copy of the dataframe to work with
     filtered_df = processed_df.copy()
 
-    # Apply year filter if available
-    if 'Year' in filtered_df.columns:
-        filtered_df = filtered_df[filtered_df['Year'].astype(float).between(year_range[0], year_range[1])]
+    # Filter by year range
+    filtered_df = filtered_df[filtered_df['Year'].between(year_range[0], year_range[1])]
 
     # Create the map
     fig = px.scatter_mapbox(
         filtered_df,
         lat='latitude',
         lon='longitude',
-        size=size_metric if size_metric in filtered_df.columns else None,
-        color=color_metric if color_metric in filtered_df.columns else None,
+        size=size_metric,
+        color=color_metric,
         hover_name='Full Location',
         hover_data=["Incident Date", "Victims Killed", "Victims Injured", "Total Victims", "State", "City Or County"],
         zoom=3,
@@ -221,7 +157,6 @@ def update_map(size_metric, color_metric, year_range):
         size_max=25,
     )
 
-    # Update map style
     fig.update_layout(
         mapbox_style="open-street-map",
         margin={"r": 0, "t": 40, "l": 0, "b": 0},
@@ -233,12 +168,10 @@ def update_map(size_metric, color_metric, year_range):
         )
     )
 
-    # Update incidents count
     incidents_count = f"Showing {filtered_df.shape[0]} incidents"
 
     return fig, incidents_count
 
-
-# Run the app
+# === Run the app ===
 if __name__ == '__main__':
     app.run(debug=True)
