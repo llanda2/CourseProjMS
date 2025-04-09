@@ -5,9 +5,11 @@ import plotly.express as px
 import os
 
 # === Initialize Dash app ===
-app = dash.Dash(__name__, external_stylesheets=['https://codepen.io/chriddyp/pen/bWLwgP.css'])
-app.config.suppress_callback_exceptions = True  # To handle dynamic component loading
+app = dash.Dash(__name__, external_stylesheets=["https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/darkly/bootstrap"
+                                                ".min.css"])
+app.config.suppress_callback_exceptions = True
 server = app.server
+
 
 # === Load and process data ===
 
