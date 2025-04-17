@@ -1,3 +1,4 @@
+
 import dash
 from dash import dcc, html, Input, Output
 import pandas as pd
@@ -64,11 +65,28 @@ app.layout = html.Div([
     dcc.Tabs(id='tabs', value='incidents', children=[
         dcc.Tab(label='Mass Shooting Incidents Map', value='incidents'),
         dcc.Tab(label='Gun Laws & Death Rates Map', value='gunlaws'),
+        dcc.Tab(label='Public Opinion Polls', value='opinion'),  # New tab
     ]),
 
     html.Div(id='controls-container'),
     html.Div(id='visualization-container')
 ])
+
+# Load opinion data once
+opinion_paths = {
+    "LL1": "./data/LL1.csv",
+    "LL2": "./data/LL2.csv",
+    "LL3": "./data/LL3.csv",
+    "LL4": "./data/LL4.csv",
+    "LL5": "./data/LL5.csv",
+    "LL6": "./data/LL6.csv",
+    "LL7": "./data/LL7.csv",
+    "LL8": "./data/LL8.csv",
+    "LL9": "./data/LL9.csv",
+    "LL10": "./data/LL10.csv",
+}
+
+opinion_data = {key: pd.read_csv(path) for key, path in opinion_paths.items()}
 
 # === Callback for rendering controls based on selected tab ===
 @app.callback(
@@ -112,12 +130,28 @@ def render_controls(tab):
             ),
             html.Div(id='incidents-count', style={'marginTop': '20px', 'fontWeight': 'bold'}),
         ], style={'padding': '20px'})
-    else:
+
+    elif tab == 'gunlaws':
         return html.Div([
             html.H3("Gun Laws Map Controls"),
             html.P("This map shows state-level gun law strength and gun death rates."),
             html.P("Hover over a state for details."),
         ], style={'padding': '20px'})
+
+    elif tab == 'opinion':
+        return html.Div([
+            html.H3("Select a Poll Question"),
+            dcc.Dropdown(
+                id='opinion-selector',
+                options=[{'label': key, 'value': key} for key in opinion_paths.keys()],
+                value='LL1',
+                clearable=False,
+                style={"color": "black"}
+            )
+        ], style={'padding': '20px'})
+
+    return html.Div()
+
 
 # === Callback for rendering the mass shooting incidents map ===
 @app.callback(
@@ -200,6 +234,32 @@ def render_gunlaws_map(tab):
     fig.update_coloraxes(colorbar_title='Law Strength')
 
     return [dcc.Graph(figure=fig, style={'height': '80vh'})]
+
+# === Callback for rendering the opinion polls charts ===
+@app.callback(
+    Output('visualization-container', 'children', allow_duplicate=True),
+    [Input('tabs', 'value'),
+     Input('opinion-selector', 'value')],
+    prevent_initial_call=True
+)
+def render_opinion_tab(tab, opinion_key):
+    if tab != 'opinion' or opinion_key is None:
+        return dash.no_update
+
+    df = opinion_data[opinion_key].copy()
+    df.columns = df.iloc[0]  # use first row as header
+    df = df.drop(df.index[0])
+    df.rename(columns={df.columns[0]: "Date"}, inplace=True)
+
+    # Melt dataframe to long format for multi-line chart
+    df_melted = df.melt(id_vars="Date", var_name="Response", value_name="Percent")
+    df_melted['Percent'] = pd.to_numeric(df_melted['Percent'], errors='coerce')
+
+    fig = px.line(df_melted, x='Date', y='Percent', color='Response',
+                  title=f"Public Opinion: {opinion_key}", markers=True)
+    fig.update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0})
+
+    return dcc.Graph(figure=fig, style={'height': '80vh'})
 
 # === Run the app ===
 if __name__ == '__main__':

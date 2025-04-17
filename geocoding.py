@@ -22,7 +22,7 @@ batch_df = pd.DataFrame({
 # Save to CSV (no header, no index) as required by Census API
 batch_df.to_csv('census_batch.csv', index=False, header=False)
 
-print("Step 1 complete: Prepared 'census_batch.csv' for upload.")
+
 
 # === Step 2: Submit batch to Census API ===
 
