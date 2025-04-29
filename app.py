@@ -5,7 +5,8 @@ import pandas as pd
 import plotly.express as px
 
 # === Initialize Dash App ===
-app = dash.Dash(__name__, external_stylesheets=["https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/darkly/bootstrap.min.css"])
+app = dash.Dash(__name__,
+                external_stylesheets=["https://cdn.jsdelivr.net/npm/bootswatch@5.3.2/dist/darkly/bootstrap.min.css"])
 app.config.suppress_callback_exceptions = True
 server = app.server
 
@@ -14,6 +15,7 @@ server = app.server
 # Mass shootings data
 shootings_df = pd.read_csv('mass_shootings_geocoded.csv')
 
+
 def process_shootings(df):
     """Cleans and processes mass shooting dataset."""
     df = df.copy()
@@ -21,10 +23,12 @@ def process_shootings(df):
     df['longitude'] = pd.to_numeric(df['longitude'], errors='coerce')
     df['Year'] = pd.to_numeric(df["Incident Date"].str.extract(r'(\d{4})')[0], errors='coerce')
     df['Total Victims'] = df["Victims Killed"] + df["Victims Injured"]
-    df['Full Location'] = df.apply(lambda row: f"{row['Address']}, {row['City Or County']}, {row['State']}, USA", axis=1)
+    df['Full Location'] = df.apply(lambda row: f"{row['Address']}, {row['City Or County']}, {row['State']}, USA",
+                                   axis=1)
     df = df.dropna(subset=['latitude', 'longitude'])
     df['Cumulative Year'] = df['Year']
     return df
+
 
 processed_shootings = process_shootings(shootings_df)
 min_year = int(processed_shootings['Year'].min())
@@ -56,6 +60,7 @@ app.layout = html.Div([
     html.Div(id='visualization-container')
 ])
 
+
 # === Callback: Render Controls by Tab ===
 @app.callback(
     Output('controls-container', 'children'),
@@ -68,14 +73,16 @@ def render_controls(tab):
             html.Label("Size points by:"),
             dcc.RadioItems(
                 id='size-metric',
-                options=[{'label': label, 'value': label} for label in ['Total Victims', 'Victims Killed', 'Victims Injured']],
+                options=[{'label': label, 'value': label} for label in
+                         ['Total Victims', 'Victims Killed', 'Victims Injured']],
                 value='Total Victims',
                 labelStyle={'display': 'block'}
             ),
             html.Label("Color points by:"),
             dcc.RadioItems(
                 id='color-metric',
-                options=[{'label': label, 'value': label} for label in ['Total Victims', 'Victims Killed', 'Victims Injured']],
+                options=[{'label': label, 'value': label} for label in
+                         ['Total Victims', 'Victims Killed', 'Victims Injured']],
                 value='Victims Killed',
                 labelStyle={'display': 'block'}
             ),
@@ -85,7 +92,7 @@ def render_controls(tab):
                 min=min_year,
                 max=max_year,
                 value=[min_year, max_year],
-                marks={i: str(i) for i in range(min_year, max_year+1)},
+                marks={i: str(i) for i in range(min_year, max_year + 1)},
                 step=1
             ),
             html.Div(id='incidents-count', style={'marginTop': '20px', 'fontWeight': 'bold'})
@@ -101,14 +108,27 @@ def render_controls(tab):
     elif tab == 'opinion':
         return html.Div([
             html.H3("Select a Poll Question"),
-            dcc.Dropdown(
+            dcc.Dropdown(  # ✅ Only ONE Dropdown
                 id='opinion-selector',
-                options=[{'label': key, 'value': key} for key in opinion_paths.keys()],
-                value='LL1',
+                options=[
+                    {'label': 'Firearm Law Strictness (1990s–2000s Data)', 'value': 'LL1'},
+                    {'label': 'Gun Ownership (1959–1990s Data, Yes Only)', 'value': 'LL2'},
+                    {'label': 'Firearm Law Strictness (Recent Data 2022–2024)', 'value': 'LL3'},
+                    {'label': 'Gun Ownership (Recent Data 2021–2024)', 'value': 'LL4'},
+                    {'label': 'Satisfaction with U.S. Gun Policies (2022–2025)', 'value': 'LL5'},
+                    {'label': 'Desired Changes to Gun Laws Among Dissatisfied Respondents', 'value': 'LL6'},
+                    {'label': 'Gun Ownership Breakdown: Personal vs Household (2021–2024)', 'value': 'LL7'},
+                    {'label': 'Support for Handgun Ban (2021–2024)', 'value': 'LL8'},
+                    {'label': 'Support for Assault Rifle Ban (2019–2024)', 'value': 'LL9'},
+                    {'label': 'Importance of Gun Control in Voting Decisions (2015–2024)', 'value': 'LL10'},
+                    {'label': 'Reasons for Gun Ownership (Hunting and Others)', 'value': 'LL11'},
+                ],
+                value='LL1',  # Default selected value
                 clearable=False,
                 style={"color": "black"}
             )
         ], style={'padding': '20px'})
+
 
 # === Callback: Render Visualizations ===
 
@@ -128,7 +148,7 @@ def render_incidents_map(tab, size_metric, color_metric, year_range):
     filtered_df = processed_shootings[
         (processed_shootings['Year'] >= year_range[0]) &
         (processed_shootings['Year'] <= year_range[1])
-    ]
+        ]
 
     expanded_rows = []
     for year in range(year_range[0], year_range[1] + 1):
@@ -153,7 +173,7 @@ def render_incidents_map(tab, size_metric, color_metric, year_range):
     )
     fig.update_layout(
         mapbox_style="open-street-map",
-        margin={"r":0,"t":40,"l":0,"b":0}
+        margin={"r": 0, "t": 40, "l": 0, "b": 0}
     )
 
     incidents_count = f"Showing {filtered_df.shape[0]} incidents"
@@ -161,6 +181,7 @@ def render_incidents_map(tab, size_metric, color_metric, year_range):
         dcc.Graph(figure=fig, style={'height': '80vh'}),
         html.Div(incidents_count, style={'fontWeight': 'bold', 'marginTop': '10px'})
     ]
+
 
 # Gun Laws Choropleth Map
 @app.callback(
@@ -185,12 +206,13 @@ def render_gunlaws_map(tab):
         title="Gun Law Strength by State and Gun Death Rates"
     )
     fig.update_layout(
-        margin={"r":0,"t":40,"l":0,"b":0},
+        margin={"r": 0, "t": 40, "l": 0, "b": 0},
         geo=dict(bgcolor='rgba(0,0,0,0)')
     )
     fig.update_coloraxes(colorbar_title='Law Strength')
 
     return [dcc.Graph(figure=fig, style={'height': '80vh'})]
+
 
 # Public Opinion Polls
 @app.callback(
@@ -215,9 +237,10 @@ def render_opinion_tab(tab, opinion_key):
         df_melted, x='Date', y='Percent', color='Response',
         title=f"Public Opinion: {opinion_key}", markers=True
     )
-    fig.update_layout(margin={"r":0,"t":40,"l":0,"b":0})
+    fig.update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0})
 
     return dcc.Graph(figure=fig, style={'height': '80vh'})
+
 
 # === Run App ===
 if __name__ == '__main__':
