@@ -1,0 +1,321 @@
+"Incident ID","Incident Date",State,"City Or County",Address,"Victims Killed","Victims Injured","Suspects Killed","Suspects Injured","Suspects Arrested",Operations
+3170672,"March 26, 2025",Florida,"Hallandale (Hallandale Beach)","3181 W Hallandale Beach Blvd",4,1,1,0,0,N/A
+3144274,"February 21, 2025",Indiana,"Lake Station","6700 block of 9th Ave",4,0,1,0,0,N/A
+3136711,"February 10, 2025",Wyoming,Byron,"239 E Shoshone Ave",4,0,1,0,0,N/A
+3096566,"December 14, 2024",Utah,"Salt Lake City (West Valley City)","3761 S Oxford Way",4,1,1,0,0,N/A
+3094239,"December 14, 2024","New Mexico",Belen,"5 Cam Escondido",4,0,0,0,1,N/A
+3089589,"December 7, 2024",Georgia,Atlanta,"200 Vineyard Walk",4,0,1,0,0,N/A
+3073211,"November 16, 2024",California,Lancaster,"44502 N Tabler Ave",4,0,0,0,1,N/A
+3069059,"November 10, 2024",Kansas,Wichita,"1918 S. Laura St",4,0,1,0,0,N/A
+3066278,"November 7, 2024",Minnesota,Duluth,"6009 Tacony St",4,0,1,0,0,N/A
+3052758,"October 21, 2024",Washington,"Fall City","7715 Lake Alice Rd SE",5,1,0,0,1,N/A
+3030531,"September 21, 2024",Alabama,Birmingham,"2012 Magnolia Ave",4,17,0,0,1,N/A
+3014703,"September 4, 2024",Georgia,Winder,"940 Haymon Morris Rd",4,7,0,0,1,N/A
+3012631,"September 2, 2024",Illinois,"Forest Park","711 Desplaines Ave",4,0,0,0,1,N/A
+3005280,"August 25, 2024","New York",Syosset,"76 Wyoming Ct",4,0,1,0,0,N/A
+3005100,"August 24, 2024",Georgia,Dalton,"1800 Pleasant Grove Dr NE",4,0,0,0,2,N/A
+2972255,"July 18, 2024",Alabama,"West Blocton","1073 Greentree Dr",5,0,0,0,1,N/A
+2967889,"July 13, 2024",Alabama,Birmingham,"3427 27th St N",4,10,0,0,2,N/A
+2965394,"July 10, 2024",California,Alameda,"417 Kitty Hawk Rd",5,0,0,0,1,N/A
+2960811,"July 6, 2024",Kentucky,Florence,"2673 Ridgecrest Dr",4,3,1,0,0,N/A
+2949852,"June 24, 2024",Nevada,"North Las Vegas","370 Casa Norte Dr",5,1,1,0,0,N/A
+2945819,"June 21, 2024",Arkansas,Fordyce,"920 W 4th St",4,9,0,1,1,N/A
+2943126,"June 12, 2024",Florida,Hudson,"Nottingham Trail",4,0,0,0,1,N/A
+2893900,"April 29, 2024","North Carolina",Charlotte,"5525 Galway Dr",4,4,1,0,0,N/A
+2887313,"April 22, 2024",Oklahoma,Yukon,"2804 Mirage St",4,0,1,0,0,N/A
+2844405,"March 3, 2024",California,"King City","215 N 2nd St",4,7,0,0,3,N/A
+2831391,"February 16, 2024",Alabama,Birmingham,"828 Center Street N",4,0,0,0,1,N/A
+2826477,"February 11, 2024",California,"Huntington Park","6000 block of Bear Ave",4,1,0,0,4,N/A
+2822404,"February 7, 2024",Pennsylvania,"Lansdowne (East Lansdowne)","58 Lewis Ave",4,2,1,0,0,N/A
+2809998,"January 23, 2024",California,Adelanto,"Shadow Mountain Rd and Lessing Ave",6,0,0,0,5,N/A
+2808531,"January 21, 2024",Illinois,Joliet,"200 block of Davis St",8,1,1,0,1,N/A
+2807473,"January 21, 2024",Illinois,"Tinley Park","7430 173rd Pl",4,0,0,0,1,N/A
+2800844,"January 13, 2024",Texas,Richmond,"17006 Cory Cornel Ln",4,0,1,0,0,N/A
+2822517,"January 6, 2024",California,Reedley,"1151 S Church Ave",4,0,0,0,1,N/A
+2771255,"December 5, 2023",Texas,Austin,"7104 Berkman Dr",6,3,0,0,1,N/A
+2769819,"December 3, 2023",Texas,Dallas,"9700 block of Royce Dr",4,1,1,0,0,N/A
+2770132,"December 3, 2023",Washington,Vancouver,"11511 NE 92nd St",4,0,1,0,0,N/A
+2764540,"November 26, 2023",California,"Los Angeles","836 W 110th St",4,0,0,0,1,N/A
+2758871,"November 18, 2023",Tennessee,Memphis,"3636 Field Lark Dr",4,1,1,0,0,N/A
+2739575,"October 26, 2023","North Carolina",Clinton,"10310 Garland Hwy",5,0,0,0,2,N/A
+2738185,"October 25, 2023",Maine,Lewiston,"24 Mollison Way",18,13,1,0,0,N/A
+2709153,"September 17, 2023",Illinois,Romeoville,"512 Concord Ave",5,0,1,0,0,N/A
+2690239,"August 24, 2023",Ohio,Hartville,"13305 Carnation Ave NW",4,0,1,0,0,N/A
+2683213,"August 16, 2023",Oklahoma,"Oklahoma City","7405 NW 5th Terrace",4,0,1,0,0,N/A
+2653609,"July 15, 2023",Georgia,Hampton,"92 Dogwood Lakes Dr",4,3,1,0,0,N/A
+2643602,"July 4, 2023",Louisiana,Shreveport,"2000 block of Pearl Ave",4,7,0,0,0,N/A
+2642071,"July 3, 2023",Pennsylvania,Philadelphia,"5700 block of Warrington Ave",5,2,0,0,1,N/A
+2629211,"June 18, 2023",Idaho,Kellogg,"525 W Cameron Ave",4,0,0,0,1,N/A
+2626402,"June 15, 2023",Tennessee,Sequatchie,"246 Pine St",5,1,1,0,0,N/A
+2609761,"May 26, 2023",Arizona,Mesa,"Alma School Rd and Main St",4,1,0,0,1,N/A
+2606205,"May 23, 2023",Texas,Texarkana,"563 Lemon Acre",4,0,0,0,1,N/A
+2590046,"May 6, 2023",Texas,Allen,"820 W Stacy Rd",8,7,1,0,0,N/A
+2587288,"May 2, 2023",Florida,"Lake Wales","614 Dawnlight Dr",4,0,1,0,0,N/A
+2586872,"April 30, 2023",Oklahoma,Henryetta,"14360 Holly Rd",6,0,1,0,0,N/A
+2585718,"April 30, 2023",California,Mojave,"15900 block of H St",4,0,0,0,1,N/A
+2584064,"April 28, 2023",Texas,Cleveland,"171 Walter Dr",5,0,0,0,1,N/A
+2575621,"April 18, 2023",Maine,Bowdoin,"1459 Augusta Rd",4,3,0,0,1,N/A
+2573436,"April 15, 2023",Alabama,Dadeville,"220 N Broadnax St",4,32,0,2,6,N/A
+2568184,"April 10, 2023",Kentucky,Louisville,"333 E Main St",5,5,1,0,0,N/A
+2555459,"March 27, 2023",Tennessee,Nashville,"33 Burton Hills Blvd",6,0,1,0,0,N/A
+2551678,"March 21, 2023","South Carolina",Sumter,"190 Whitetail Cir",4,0,1,0,0,N/A
+2545871,"March 14, 2023",Alabama,Birmingham,"8400 block of 8th Ave S",4,0,0,0,1,N/A
+2544817,"March 12, 2023",Texas,Dallas,"3626 Villaverde Ave",4,0,0,0,2,N/A
+2543201,"March 10, 2023",Florida,Hialeah,"14811 NW 87th Ct",4,0,1,0,0,N/A
+2536665,"March 1, 2023",Florida,Cocoa,"4075 Alan Shepard Ave",4,0,0,0,1,N/A
+2531925,"February 22, 2023",Alabama,Daphne,"123 block of Melanie Loop",4,0,0,0,1,N/A
+2527517,"February 17, 2023",Mississippi,Coldwater,"3196 Arkabutla Dam Road",6,0,0,0,1,N/A
+2605383,"January 29, 2023",Tennessee,Luttrell,"380 Clinch Valley Rd",4,0,1,0,0,N/A
+2509663,"January 23, 2023",California,"Half Moon Bay","12761 San Mateo Rd",7,1,0,0,1,N/A
+2507836,"January 21, 2023",California,"Monterey Park","122 W Garvey Ave",11,9,1,0,0,N/A
+2503345,"January 16, 2023",California,Goshen,"Harvest Ave and Rd 68",6,0,0,0,2,N/A
+2501869,"January 13, 2023",Ohio,Cleveland,"3719 Mack Ct",4,1,0,0,1,N/A
+2497502,"January 7, 2023","North Carolina","High Point","2734 Mossy Meadow Dr",4,0,1,0,0,N/A
+2495648,"January 4, 2023",Utah,"Cedar City (Enoch)","4923 N Albert Dr",7,0,1,0,0,N/A
+2465761,"November 22, 2022",Virginia,Chesapeake,"1521 Sam's Circle",6,6,1,0,0,N/A
+2464943,"November 20, 2022",Oklahoma,Hennessey,"2372 N 2760 Rd",4,1,0,0,1,N/A
+2463465,"November 19, 2022",Colorado,"Colorado Springs","3430 N Academy Blvd",5,19,0,0,1,N/A
+2462457,"November 18, 2022",Virginia,Richmond,"4275 Laurel Oak Rd",4,0,0,0,1,N/A
+2452673,"November 4, 2022",Florida,Orlando,"10145 Myers Dr",4,1,0,1,1,N/A
+2452798,"November 4, 2022",Maryland,"La Plata","3018 Wildflower Dr",4,0,1,0,0,N/A
+2448366,"October 30, 2022",Colorado,Aurora,"900 block of N Geneva St",4,0,0,0,1,N/A
+2447217,"October 27, 2022",Oklahoma,"Broken Arrow","425 S Hickory Ave",7,0,1,0,0,N/A
+2444683,"October 21, 2022",Wisconsin,Hartland,"700 Mansfield Court",4,0,2,0,0,N/A
+2439423,"October 17, 2022",Virginia,Woodbridge,"5297 Mansfield Ct",4,0,0,0,1,N/A
+2436826,"October 13, 2022","North Carolina",Raleigh,"5300 block of Sahalee Way",5,2,0,1,1,N/A
+2439284,"October 9, 2022",Oklahoma,Henryetta,"US-75 and Catalpa Rd",4,0,0,0,1,N/A
+2434247,"October 9, 2022","South Carolina",Inman,"280 Bobo Dr",5,0,0,0,1,N/A
+2432893,"October 7, 2022",Texas,"Fort Worth","1200 block of Jessamine St",4,0,0,0,0,N/A
+2431069,"October 5, 2022",Texas,Baytown,"2000 block of Tri City Beach Rd",4,2,1,0,0,N/A
+2426627,"September 29, 2022",Texas,"Mc Gregor","901 S Monroe St",5,0,0,1,1,N/A
+2410446,"September 9, 2022",Maryland,"Elk Mills","47 Hebron Ct",4,0,1,0,0,N/A
+2379499,"August 5, 2022",Ohio,Dayton,"7120 Hardwicke Pl",4,0,0,0,1,N/A
+2379020,"August 4, 2022",Nebraska,Laurel,"503 Elm St",4,0,0,0,1,N/A
+2377338,"August 2, 2022",Florida,Orlando,"9873 Lake District Ln",4,0,1,0,0,N/A
+2361614,"July 16, 2022",Texas,Houston,"2331 Bammelwood Dr",4,0,0,0,1,N/A
+2348384,"July 4, 2022",Illinois,"Highland Park","Central Ave and 2nd St",7,30,0,0,1,N/A
+2323642,"June 7, 2022",Virginia,Portsmouth,"1628 Maple Ave",4,0,0,0,1,N/A
+2319567,"June 2, 2022",Texas,Centerville,"1696 TX-7 W",5,0,1,0,0,N/A
+2318310,"June 1, 2022",Oklahoma,Tulsa,"6161 S Yale Ave",4,0,1,0,0,N/A
+2313970,"May 27, 2022",Michigan,Stanwood,"10711 185th Ave",4,0,0,1,1,N/A
+2310278,"May 24, 2022",Texas,Uvalde,"715 Old Carrizo Rd",21,17,1,0,0,N/A
+2301751,"May 14, 2022","New York",Buffalo,"1275 Jefferson Ave",10,3,0,0,1,N/A
+2288842,"April 27, 2022",Mississippi,Biloxi,"2688 Beach Blvd",4,0,0,0,0,N/A
+2285267,"April 21, 2022",Arkansas,"Mountain View","646 Northcutt Rd",4,0,0,0,1,N/A
+2283535,"April 20, 2022",Minnesota,Duluth,"715 E 12th St",4,0,1,0,0,N/A
+2269082,"April 3, 2022",California,Sacramento,"J St and 10th St",3,11,3,1,2,N/A
+2243861,"February 28, 2022",California,Sacramento,"2041 Wyda Way",4,0,1,0,0,N/A
+2227058,"February 5, 2022",Texas,Corsicana,"2919 W 2nd Ave",7,0,1,0,0,N/A
+2217882,"January 23, 2022",California,Inglewood,"1300 block of N Park Ave",4,1,0,0,3,N/A
+2218159,"January 23, 2022",Wisconsin,Milwaukee,"2505 N 21st St",6,0,0,0,1,N/A
+2201716,"December 31, 2021",Mississippi,Gulfport,"1200 block of Lewis Ave",4,3,0,0,6,N/A
+2198521,"December 27, 2021",Colorado,Denver,"56 Broadway",5,2,1,0,0,N/A
+2178487,"November 30, 2021",Michigan,Oxford,"745 N Oxford Rd",4,7,0,0,1,N/A
+2177416,"November 28, 2021",California,Lancaster,"3500 block of Garnet Ln",5,0,0,0,1,N/A
+2147301,"October 21, 2021",Washington,Tacoma,"4258 Everett St",4,0,0,0,1,N/A
+2147042,"October 20, 2021",Michigan,Farwell,"9539 S Harrison Ave",4,0,0,0,1,N/A
+2125444,"September 25, 2021",Tennessee,Athens,"Co Rd 60",4,1,0,0,2,N/A
+2115947,"September 12, 2021",Minnesota,"Saint Paul","7th St W and N Walnut St",4,0,0,0,1,N/A
+2108414,"September 5, 2021",Texas,Houston,"7518 Imogene St",4,0,0,0,0,N/A
+2108302,"September 5, 2021",Florida,Lakeland,"N Socrum Loop Rd and Fulton Green Rd",4,1,0,1,1,N/A
+2074406,"July 25, 2021",California,Wasco,"1718 1st St",4,1,1,0,0,N/A
+2068568,"July 20, 2021",Texas,Jacksonville,"16241 TX-110",4,0,0,0,3,N/A
+2035452,"June 15, 2021",Illinois,Chicago,"6221 S Morgan St",5,3,0,0,0,N/A
+2015730,"May 26, 2021",California,"San Jose","101 W Younger Ave",9,0,1,0,0,N/A
+2014381,"May 24, 2021",Ohio,"West Jefferson","127 Jackson St",4,0,0,0,1,N/A
+1999125,"May 9, 2021",Colorado,"Colorado Springs","2828 Preakness Way",6,0,1,0,0,N/A
+1989840,"April 28, 2021","North Carolina",Boone,"553 Hardaman Cir",4,0,1,0,0,N/A
+1978635,"April 15, 2021",Indiana,Indianapolis,"8951 Mirabel Rd",8,7,1,0,0,N/A
+1971410,"April 7, 2021","South Carolina","Rock Hill","4456 Marshall Rd",6,0,1,0,0,N/A
+1969221,"April 3, 2021",Texas,Allen,"1517 Pine Bluff Dr",4,0,2,0,0,N/A
+1966181,"March 31, 2021",California,Orange,"202 West Lincoln Ave",4,1,0,1,1,N/A
+1963598,"March 28, 2021",Maryland,Essex,"1601 Middleborough Rd",4,1,1,0,0,N/A
+1958652,"March 22, 2021",Colorado,Boulder,"3600 Table Mesa Dr",10,0,0,1,1,N/A
+1954379,"March 16, 2021",Georgia,Acworth,"6468 Hwy 92",8,1,0,0,1,N/A
+1952161,"March 13, 2021",Indiana,Indianapolis,"300 block of N Randolph St",4,1,0,0,1,N/A
+1917909,"February 2, 2021",Oklahoma,Muskogee,"903 Indiana St",6,1,0,0,1,N/A
+1910136,"January 24, 2021",Indiana,Indianapolis,"3540 Adams St",5,1,0,0,1,N/A
+1898261,"January 9, 2021",Illinois,Evanston,"100 Asbury Ave",5,2,1,0,0,N/A
+1886721,"December 25, 2020",Arkansas,Atkins,"5180 Pine Ridge Rd",4,0,1,0,0,N/A
+1885251,"December 22, 2020",Mississippi,Meridian,"Jeffrey Acres Rd",4,0,1,0,0,N/A
+1876727,"December 13, 2020","West Virginia",Elkview,"1384 Cemetery Hill Dr",4,0,0,0,1,N/A
+1908063,"December 8, 2020","West Virginia",Williamsburg,"611 Flynns Creek Rd",5,0,1,0,0,N/A
+1866100,"November 30, 2020",Alaska,Palmer,"335 N Valley Way",4,0,0,0,1,N/A
+1788352,"September 7, 2020",California,Aguanga,"45125 CA-371",7,0,0,0,0,N/A
+1765336,"August 15, 2020",Michigan,Belleville,"24914 Martinsville Rd",4,0,0,0,1,N/A
+1749873,"July 29, 2020",Ohio,Elyria,"537 Willow Park Rd",4,0,1,0,0,N/A
+1739917,"July 19, 2020",Michigan,Detroit,"9122 Dexter Ave",4,0,0,0,1,N/A
+1728683,"July 7, 2020","New Jersey",Paterson,"Harrison St and Carroll St",4,3,0,0,0,N/A
+1725081,"July 4, 2020",Illinois,Chicago,"6100 block of S Carpenter St",4,4,0,0,0,N/A
+1712342,"June 22, 2020","North Carolina",Charlotte,"1800 block of Beatties Ford Rd",4,5,0,0,0,N/A
+1703044,"June 11, 2020",Louisiana,Monroe,"1101 Richwood Road 2",5,0,1,0,0,N/A
+1697453,"June 4, 2020",Alabama,"Valhermoso Springs","522 Talucah Rd",7,0,0,0,2,N/A
+1666945,"April 27, 2020",Wisconsin,Milwaukee,"2800 block of N 12th St",5,0,0,0,1,N/A
+1640317,"March 15, 2020",Missouri,Springfield,"2885 E Chestnut Expressway",4,2,1,0,0,N/A
+1640295,"March 15, 2020","North Carolina",Moncure,"842 Moncure Flatwood Rd",6,0,1,0,0,N/A
+1629488,"February 26, 2020",Wisconsin,Milwaukee,"3939 W Highland Blvd",5,0,1,0,0,N/A
+1615155,"February 5, 2020",Indiana,Indianapolis,"4100 block of Shady Oak Dr",4,0,0,0,4,N/A
+1606476,"January 24, 2020","North Carolina",Vanceboro,"107 Kinshaw Ct",4,0,1,0,0,N/A
+1599331,"January 17, 2020",Utah,Grantsville,"93 Eastmoor Dr",4,1,0,0,1,N/A
+1568230,"December 10, 2019","New Jersey","Jersey City","223 Martin Luther King Dr",4,3,2,0,0,N/A
+1551531,"November 17, 2019",California,Fresno,"5361 E Lamona Ave",4,6,0,0,7,N/A
+1550546,"November 16, 2019",California,"San Diego","2152 Flintridge Dr",5,0,1,0,0,N/A
+1539347,"October 31, 2019",California,Orinda,"114 Lucille Way",5,3,0,0,0,N/A
+1537992,"October 30, 2019",Pennsylvania,Philadelphia,"5026 Walton Ave",4,0,0,0,1,N/A
+1525476,"October 12, 2019",Illinois,Chicago,"6733 W Irving Park Rd",5,0,0,0,1,N/A
+1521226,"October 7, 2019",Massachusetts,Abington,"135 Centre Ave",4,0,1,0,0,N/A
+1520330,"October 6, 2019",Kansas,"Kansas City","1013 Central Ave",4,5,0,0,2,N/A
+1515327,"September 29, 2019",Texas,Beaumont,"4100 block of Highland Ave",4,0,0,0,1,N/A
+1512486,"September 21, 2019",Ohio,Cleveland,"3616 East 144th St",4,0,0,0,1,N/A
+1503192,"September 12, 2019","New Mexico",Albuquerque,"1028 Lura Pl SW",4,2,0,0,0,N/A
+1495192,"September 2, 2019",Alabama,Elkmont,"25019 Ridge Road",5,0,0,0,1,N/A
+1492441,"August 31, 2019",Texas,Odessa,"8250 TX 191",7,23,1,0,0,N/A
+1467828,"August 4, 2019",Ohio,Dayton,"419 E 5th St",9,17,1,0,0,N/A
+1466705,"August 3, 2019",Texas,"El Paso","7101 Gateway Blvd",23,23,0,0,1,N/A
+1461352,"July 28, 2019",Wisconsin,"Chippewa Falls","16964 54th Ave",4,2,1,0,0,N/A
+1457165,"July 25, 2019",California,"Canoga Park","21901 Roscoe Boulevard",4,2,0,0,1,N/A
+1441721,"July 6, 2019",Missouri,"Saint Louis","1921 Chambers Rd",5,0,0,0,1,N/A
+1429810,"June 23, 2019",California,"San Jose","568 Habbitts Court",4,0,1,0,0,N/A
+1428047,"June 21, 2019",California,"Santa Maria","519  West Taylor St",4,0,1,0,0,N/A
+1418180,"June 8, 2019",Washington,"White Swan","5151 Medicine Valley Rd",5,2,0,0,2,N/A
+1410442,"May 31, 2019",Virginia,"Virginia Beach","2405 Courthouse Drive",12,4,1,0,0,N/A
+1394330,"May 13, 2019",Missouri,"Saint Louis","4047 Shreve Ave",4,1,0,0,0,N/A
+1382711,"April 28, 2019",Ohio,"West Chester","4637 Wyndtree Dr",4,0,0,0,1,N/A
+1328562,"February 16, 2019",Mississippi,Clinton,"1214 Foxhill Dr",4,0,1,0,0,N/A
+1327321,"February 15, 2019",Illinois,Aurora,"641 Archer Ave",5,6,1,0,0,N/A
+1324279,"February 11, 2019",Texas,Livingston,"3628 FM 3126",4,0,1,0,0,N/A
+1320286,"February 3, 2019",California,"Palm Springs","E Sunny Dunes Rd and El Placer Rd",4,0,0,0,1,N/A
+1312284,"January 26, 2019",Louisiana,Gonzales,"42350 Church Point Rd",5,0,0,0,1,N/A
+1310397,"January 24, 2019",Georgia,Rockmart,"319 Williamson St",4,1,0,0,1,N/A
+1309114,"January 23, 2019",Florida,Sebring,"1901 US 27 S",5,0,0,0,1,N/A
+1287286,"December 28, 2018",Missouri,"Saint Charles","150 Whetstone Dr",4,0,0,1,1,N/A
+1258804,"November 19, 2018",Pennsylvania,Philadelphia,"5100 block of Malcolm St",4,0,0,0,4,N/A
+1249561,"November 7, 2018",California,"Thousand Oaks","99 Rolling Oaks Dr",12,2,1,0,0,N/A
+1241819,"October 27, 2018",Pennsylvania,Pittsburgh,"5898 Wilkins Ave",11,6,0,1,1,N/A
+1233663,"October 15, 2018",Tennessee,Columbia,"1075 Carters Creek Pike",4,0,1,0,0,N/A
+1232288,"October 13, 2018",Texas,Taft,"511 Wilburn St",4,1,0,0,2,N/A
+1209006,"September 12, 2018",California,Bakersfield,"660 Manwell Blvd",5,0,1,0,0,N/A
+1173476,"July 27, 2018",Texas,Robstown,"603 East Ave J",4,0,1,0,0,N/A
+1160253,"July 9, 2018",Delaware,Wilmington,"2709 Ferris Rd",4,0,1,0,0,N/A
+1151584,"June 28, 2018",Maryland,Annapolis,"888 Bestgate Rd",5,0,0,0,1,N/A
+1138324,"June 11, 2018",Florida,Orlando,"4932 Eaglesmere Dr",5,0,1,0,0,N/A
+1118785,"May 18, 2018",Texas,"Santa Fe","16000 Hwy 6",10,13,0,0,1,N/A
+1116705,"May 16, 2018",Texas,Ponder,"610 Lone Star Park Ln",4,1,1,0,0,N/A
+1096826,"April 22, 2018",Tennessee,Antioch,"3571 Murfreesboro Pike",4,3,0,0,1,N/A
+1057518,"February 26, 2018",Michigan,Detroit,"22700 Fenkell Ave",4,0,1,0,0,N/A
+1049217,"February 14, 2018",Florida,"Pompano Beach (Parkland)","5901 Pine Island Rd",17,17,0,0,1,N/A
+1046961,"February 10, 2018",Kentucky,Paintsville,"413 Mill St",4,0,1,0,0,N/A
+1037529,"January 28, 2018",Pennsylvania,Melcroft,"1301 Indian Creek Valley Rd",4,0,1,0,0,N/A
+1038429,"January 28, 2018",Pennsylvania,Reading,"123 S 3rd St",4,0,0,0,1,N/A
+1018118,"December 31, 2017","New Jersey","Long Branch","635 Wall St",4,0,0,0,1,N/A
+987611,"November 14, 2017",California,Corning,"17357 Stagecoach Rd",5,12,1,0,0,N/A
+980577,"November 5, 2017",Texas,"Sutherland Springs","216 4th St",26,20,1,0,0,N/A
+957562,"October 11, 2017",Ohio,Pedro,"15497 SR 93",4,0,0,0,1,N/A
+952720,"October 5, 2017",Arizona,"Casa Grande","400 block of W 13th Street",4,0,0,0,2,N/A
+946496,"October 1, 2017",Nevada,"Las Vegas","3950 Las Vegas Blvd S",60,439,1,0,0,N/A
+933957,"September 15, 2017",Illinois,Chicago,"4700 block of S Fairfield Ave",4,0,0,0,0,N/A
+930569,"September 10, 2017",Texas,Plano,"1712 West Spring Creek Parkway",8,1,1,0,0,N/A
+920513,"August 24, 2017",Missouri,"Saint Louis","10400 block of Balmoral Dr",4,0,0,0,1,N/A
+917820,"August 21, 2017","North Carolina",Whitakers,"980 Fishing Creek Rd",4,0,0,0,1,N/A
+868363,"June 15, 2017","New Mexico","La Madera","491 NM-111",5,0,0,0,1,N/A
+859875,"June 5, 2017",Florida,Orlando,"2427 Forsyth Rd",5,0,1,0,0,N/A
+853756,"May 27, 2017",Mississippi,"Bogue Chitto","2871 Lee Dr",8,0,0,1,1,N/A
+813821,"April 7, 2017",Texas,Houston,"3829 Mount Pleasant St",4,0,1,0,0,N/A
+807618,"March 30, 2017",Illinois,Chicago,"2704 E 75th St",4,0,0,0,0,N/A
+800363,"March 22, 2017",Wisconsin,Rothschild,"1133 E Grand Ave",4,0,1,0,0,N/A
+779582,"February 21, 2017",Mississippi,Toomsuba,"Butts Road",4,0,0,0,1,N/A
+768243,"February 6, 2017",Mississippi,"Yazoo City","11th Street",4,0,0,0,1,N/A
+1025158,"January 27, 2017",Washington,Bremerton,"Tenino Dr W",4,0,0,0,3,N/A
+743995,"January 6, 2017",Florida,"Fort Lauderdale","100 Terminal Dr",5,6,0,0,1,N/A
+733176,"December 24, 2016","North Carolina",Wilson,"2241 Banks Lane East",4,0,0,0,0,N/A
+727759,"December 17, 2016",Illinois,"Chicago (Roseland)","100 block of W 105th St",5,0,0,0,1,N/A
+725323,"December 9, 2016",Texas,Channelview,"15300 block of Market St",4,0,0,0,0,N/A
+686312,"October 27, 2016",Georgia,Jackson,"600 block of Moccasin Gap Road",4,0,0,0,1,N/A
+676663,"October 15, 2016",California,"Los Angeles","2918 Rimpau Blvd",4,11,0,0,1,N/A
+668279,"October 1, 2016",Illinois,"Pembroke Township","S 17250 East Rd",4,0,0,0,2,N/A
+661703,"September 23, 2016",Washington,Burlington,"201 Cascade Mall Dr",5,0,0,0,1,N/A
+651957,"September 8, 2016",Texas,"Del Valle","8330 Linden Rd",4,0,0,0,0,N/A
+634819,"August 20, 2016",Alabama,Citronelle,"17160 Jim Platt Road",5,0,0,0,1,N/A
+623195,"August 6, 2016",Pennsylvania,"Reading (Sinking Spring)","51 Winding Brook Drive",4,0,1,0,0,N/A
+604762,"July 17, 2016",Louisiana,"Baton Rouge","9611 Airline Hwy",4,2,1,0,0,N/A
+597756,"July 7, 2016",Texas,Dallas,"800 Main St",5,9,0,0,0,N/A
+592207,"June 29, 2016",Nevada,"Las Vegas","6100 block of West Lake Mead Boulevard",4,0,1,0,0,N/A
+577157,"June 12, 2016",Florida,Orlando,"1912 S Orange Ave",49,53,1,0,0,N/A
+577574,"June 11, 2016","New Mexico",Roswell,"2300 block of Davis Ave",5,0,0,0,1,N/A
+565244,"May 15, 2016",Georgia,Moultrie,"Rossman Dairy Road",5,0,0,0,1,N/A
+546022,"April 22, 2016",Georgia,Appling,"3162 Johnson Drive",5,0,1,0,0,N/A
+545525,"April 22, 2016",Ohio,Piketon,"4077 Union Hill Rd",8,0,0,0,4,N/A
+519541,"March 9, 2016",Pennsylvania,"Pittsburgh (Wilkinsburg)","1304 Franklin Ave",6,2,0,0,0,N/A
+518436,"March 7, 2016",Kansas,"Kansas City","3000 block of South 36th Street",5,0,0,0,1,N/A
+512073,"February 26, 2016",Washington,Belfair,"300 block of Horseshoe Rd",4,0,1,0,0,N/A
+509897,"February 23, 2016",Arizona,Glendale,"4812 West Sunnyside Ave",4,0,1,0,0,N/A
+508640,"February 20, 2016",Michigan,Kalamazoo,"5581 Cracker Barrel Blvd",6,2,0,0,1,N/A
+590221,"February 19, 2016",Missouri,Edgerton,"4100 block of Buena Vista Road",4,0,0,0,1,N/A
+494378,"January 27, 2016",Virginia,Chesapeake,"1401 N. George Washington Hwy",5,0,1,0,0,N/A
+456893,"December 2, 2015",California,"San Bernardino","1365 South Waterman Ave",14,19,2,0,0,N/A
+448419,"November 15, 2015",Texas,"Tennessee Colony","800 block of An County Rd 2217",5,0,0,0,1,N/A
+423223,"October 1, 2015",Oregon,Roseburg,"1140 Umpqua College Rd",9,9,1,0,0,N/A
+418318,"September 17, 2015","South Dakota",Geddes,"36705 379th Street",5,0,1,0,0,N/A
+412040,"September 7, 2015",Minnesota,Excelsior,"20980 Channel Drive",4,0,1,0,0,N/A
+390526,"August 8, 2015",Texas,Houston,"2211 Falling Oaks",8,0,0,0,1,N/A
+390050,"August 7, 2015",Vermont,Barre,"3182 Airport Rd",4,0,0,0,1,N/A
+379166,"July 22, 2015",Georgia,Suwanee,"5500 block of Old Atlanta Road",4,0,1,0,0,N/A
+375022,"July 16, 2015",Tennessee,Chattanooga,"4051 Amnicola Hwy",5,2,1,0,0,N/A
+374630,"July 15, 2015","South Carolina","Holly Hill","7050 Old State Rd",4,1,0,0,5,N/A
+359830,"June 17, 2015","South Carolina",Charleston,"110 Calhoun Street",9,1,0,0,1,N/A
+357164,"June 13, 2015",Ohio,Columbus,"1623 E. Hudson Street",4,1,0,0,2,N/A
+353854,"June 7, 2015",Montana,"Deer Lodge","Boulder Creek Road",4,0,1,0,0,N/A
+341622,"May 17, 2015",Texas,Waco,"4671 S Jack Kultgen Fwy",9,18,0,0,0,N/A
+339229,"May 12, 2015",Arizona,Tucson,"800 block of West Calle Medina Road",4,0,1,0,0,N/A
+324424,"April 16, 2015",Arizona,Phoenix,"4300 block of East Anderson Drive",4,0,1,0,0,N/A
+312119,"March 24, 2015",Indiana,Indianapolis,"3100 block of N Harding St",4,0,0,0,0,N/A
+298122,"February 26, 2015",Missouri,Tyrone,"18279 Highway H",7,1,1,0,0,N/A
+289811,"February 7, 2015",Georgia,Douglasville,"3640 Willow Tree Circle",4,2,1,0,0,N/A
+286810,"January 31, 2015",Georgia,Lagrange,"113 Woodstream Trl",4,0,0,0,1,N/A
+276459,"January 9, 2015",California,"San Francisco","Laguna St and Page St",4,0,0,0,1,N/A
+266407,"December 20, 2014",Illinois,Rockford,"3200 block of Montrose Avenue",4,0,0,0,1,N/A
+263556,"December 15, 2014",Pennsylvania,Lansdale,"100 block of West 5th St",6,0,1,0,0,N/A
+223651,"November 22, 2014",Ohio,Cleveland,"1443 E 92nd St",4,1,0,0,1,N/A
+221347,"November 15, 2014",Missouri,Springfield,"2555 N. Glenstone",4,0,0,0,1,N/A
+211348,"October 26, 2014",Kentucky,Cadiz,"1410 Old Dover Road",4,0,0,0,1,N/A
+210363,"October 24, 2014",Washington,Marysville,"5611 108th St NE",4,1,1,0,0,N/A
+204254,"October 8, 2014","New York",Guilderland,"1846 Western Ave",4,0,0,0,0,N/A
+192851,"September 18, 2014",Florida,Bell,"2550 NW 29th Terrace",7,0,1,0,0,N/A
+168844,"August 3, 2014",Virginia,Culpeper,"14458 Rixeyville Rd",5,0,0,0,0,N/A
+164513,"July 26, 2014",Maine,Saco,"35 Water Street",4,0,1,0,0,N/A
+156670,"July 9, 2014",Texas,Spring,"711 Leaflet Ln",6,1,0,0,1,N/A
+144524,"June 8, 2014",Florida,"Fort Myers","17372 Phlox Drive",4,0,1,0,0,N/A
+108649,"February 20, 2014",California,Alturas,"300 W 1st St",4,1,0,0,1,N/A
+108691,"February 20, 2014",Indiana,Indianapolis,"3200 block of S Parker Ave",4,0,0,0,1,N/A
+140117,"January 30, 2014",Texas,Cypress,"14015 Fosters Creek Dr",4,0,0,0,1,N/A
+97365,"January 16, 2014",Utah,"Spanish Fork","37 N 630 West",4,0,1,0,0,N/A
+495332,"December 1, 2013",Kansas,Topeka,"1629 SW Central Park",4,0,0,0,0,N/A
+494155,"November 23, 2013",Oklahoma,Tulsa,"Pine Street and Harvard Avenue",4,1,0,0,0,N/A
+493109,"November 5, 2013",Florida,Jacksonville,"1107 Randolph St",4,0,0,0,0,N/A
+492914,"October 29, 2013","South Carolina",Greenwood,"2007 Callison Hwy",5,0,1,0,0,N/A
+2930352,"October 28, 2013",Texas,Terrell,"309 Stallings St",5,0,0,0,0,N/A
+492325,"October 26, 2013",Arizona,Phoenix,"4579 N 17th Ave",4,0,1,0,0,N/A
+480981,"October 9, 2013",Texas,Paris,"435 NE 6th Street",4,0,0,0,0,N/A
+480605,"September 20, 2013",Texas,Rice,"703 NW 0149",4,0,1,0,0,N/A
+480366,"September 16, 2013","District of Columbia","Washington Navy Yard","1336 Isaac Hull Ave",12,3,1,0,0,N/A
+479747,"September 12, 2013",Tennessee,"Crab Orchard","US 70 and Renegade Mountain Pkwy",4,0,0,0,1,N/A
+492001,"August 14, 2013",Oklahoma,"Oklahoma City","4601 SE 79th St",4,0,0,0,1,N/A
+491698,"August 7, 2013",Texas,Dallas,"7106 Long Canyon Trail",4,4,0,0,1,N/A
+491265,"July 26, 2013",Florida,Hialeah,"1485 W 46th St",6,0,1,0,0,N/A
+491253,"July 26, 2013","West Virginia",Clarksburg,"743 Locust Avenue",4,0,0,0,1,N/A
+489581,"June 7, 2013",California,"Santa Monica","2036 Yorkshire Ave",5,1,1,0,0,N/A
+486142,"May 11, 2013",Indiana,Columbus,"2634 E Main Cross St",4,0,0,0,1,N/A
+485811,"April 24, 2013",Illinois,Manchester,"East Street",5,1,1,0,0,N/A
+484333,"April 21, 2013",Washington,"Federal Way","33311 18th Ln S",4,0,1,0,0,N/A
+484317,"April 18, 2013",Ohio,Akron,"20 Kimlyn Circle",4,0,0,0,1,N/A
+482856,"March 13, 2013","New York",Mohawk,"17 W Main St",4,2,1,0,0,N/A
+479363,"January 19, 2013","New Mexico",Albuquerque,"2806 Long Lane",5,0,0,0,1,N/A
+478948,"January 7, 2013",Oklahoma,Tulsa,"6000 block of South Owasso",4,0,0,0,2,N/A
+1119336,"December 14, 2012",Connecticut,"Sandy Hook","12 Dickenson Dr",27,2,1,0,0,N/A
+2807948,"September 27, 2012",Minnesota,Minneapolis,"2322 Chestnut Ave",6,2,1,0,0,N/A
+2807879,"August 5, 2012",Wisconsin,"Oak Creek","7512 S Howell Ave",7,3,1,0,0,N/A
+2805505,"July 20, 2012",Colorado,Aurora,"14300 E Alameda Ave",11,58,0,0,1,N/A
+2807354,"May 30, 2012",Washington,Seattle,"5828 Roosevelt Way NE",5,1,1,0,0,N/A
+2807241,"April 2, 2012",California,Oakland,"7850 Edgewater Dr",7,3,0,0,1,N/A
+2930956,"February 21, 2012",Georgia,Norcross,"6005 Buford Hwy",4,0,1,0,0,N/A
+3031116,"January 29, 2012",Alabama,Birmingham,"3113 Avenue S",5,0,0,0,2,N/A
