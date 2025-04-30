@@ -11,7 +11,31 @@ app.config.suppress_callback_exceptions = True
 server = app.server
 
 # === Load and Process Data ===
-# Load and process mass shootings data
+# === Load and clean gun laws dataset ===
+gun_laws_df = pd.read_csv('./data/stateLaws.csv')
+gun_laws_df.columns = gun_laws_df.columns.str.strip()  # Clean column names
+gun_laws_df = gun_laws_df.rename(columns={
+    'Label': 'State',
+    'Strength of Gun Laws (out of 100 points)': 'Law Strength',
+    'Gun Deaths per 100,000 Residents': 'Gun Deaths'
+})
+gun_laws_df['Law Strength'] = pd.to_numeric(gun_laws_df['Law Strength'], errors='coerce')
+gun_laws_df['Gun Deaths'] = pd.to_numeric(gun_laws_df['Gun Deaths'], errors='coerce')
+
+# === Load and clean Supreme Court cases dataset ===
+sc_cases_df = pd.read_csv('./data/SCDeci.csv')
+sc_cases_df.columns = sc_cases_df.columns.str.strip()
+sc_cases_df = sc_cases_df.rename(columns={
+    'Second Amendment Supreme Court Cases': 'Case',
+    'Year of Decision': 'Year',
+    'Court Justices': 'Justice',
+    'Justice Decision': 'Decision Type',
+    '0 - Advocacy for Gun Rights; 1 - Advocacy for Gun Control': 'Stance'
+})
+sc_cases_df['Year'] = pd.to_numeric(sc_cases_df['Year'], errors='coerce')
+sc_cases_df['Stance'] = pd.to_numeric(sc_cases_df['Stance'], errors='coerce')
+
+# === Load and process mass shootings data ===
 shootings_df = pd.read_csv('mass_shootings_geocoded.csv')
 shootings_df['latitude'] = pd.to_numeric(shootings_df['latitude'], errors='coerce')
 shootings_df['longitude'] = pd.to_numeric(shootings_df['longitude'], errors='coerce')
@@ -23,7 +47,7 @@ processed_shootings = shootings_df.copy()
 min_year = int(processed_shootings['Year'].min())
 max_year = int(processed_shootings['Year'].max())
 
-# Load and clean opinion data
+# === Load and clean opinion poll data ===
 opinion_paths = {f"LL{i}": f"./data/LL{i}.csv" for i in range(1, 11)}
 
 def clean_opinion_df(df):
@@ -100,10 +124,11 @@ def render_controls(tab):
     Output('incidents-graph', 'children'),
     Input('tabs', 'value'),
     Input('size-metric', 'value'),
-    Input('year-slider', 'value')
+    Input('year-slider', 'value'),
+    prevent_initial_call=True
 )
 def update_mass_shootings(tab, size_metric, year_range):
-    if tab != 'incidents':
+    if tab != 'incidents' or size_metric is None or year_range is None:
         return None
     filtered_df = processed_shootings[
         (processed_shootings['Year'] >= year_range[0]) &
