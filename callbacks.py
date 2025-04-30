@@ -3,6 +3,8 @@ import plotly.express as px
 import pandas as pd
 import dash_bootstrap_components as dbc
 from utils import load_cleaned_opinion_data
+from utils import load_mass_shooting_counts_by_year, load_scotus_timeline_data
+import plotly.graph_objects as go
 
 
 def register_callbacks(app, DATA):
@@ -468,3 +470,63 @@ def register_callbacks(app, DATA):
 
         # Default empty container for other tabs
         return html.Div([])
+
+    @app.callback(
+        Output('timeline-graph', 'children'),
+        Input('tabs', 'value')
+    )
+    def render_shooting_scotus_timeline(tab):
+        if tab != 'scotus':
+            return None
+
+        shootings = load_mass_shooting_counts_by_year()
+        scotus = load_scotus_timeline_data()
+
+        fig = go.Figure()
+
+        # Line chart for shooting incidents
+        fig.add_trace(go.Scatter(
+            x=shootings['Year'],
+            y=shootings['Incident Count'],
+            mode='lines+markers',
+            name='Mass Shooting Incidents',
+            line=dict(color='crimson')
+        ))
+
+        # Add vertical lines and invisible markers for SCOTUS cases
+        for _, row in scotus.iterrows():
+            stance_color = 'blue' if row['Stance'] == 0 else 'red'
+            stance_label = 'Gun Rights' if row['Stance'] == 0 else 'Gun Control'
+
+            # Add vertical line
+            fig.add_vline(
+                x=row['Year'],
+                line=dict(color=stance_color, dash='dash'),
+                opacity=0.5
+            )
+
+            # Add invisible marker with hover label
+            fig.add_trace(go.Scatter(
+                x=[row['Year']],
+                y=[shootings['Incident Count'].max() * 1.05],
+                mode='markers',
+                marker=dict(color=stance_color, size=10, symbol='square'),
+                hovertemplate=(
+                    f"<b>{row['Case']}</b><br>"
+                    f"Year: {int(row['Year'])}<br>"
+                    f"Stance: {stance_label}<extra></extra>"
+                ),
+                name='',
+                showlegend=False
+            ))
+
+        fig.update_layout(
+            title='Mass Shooting Trends and Supreme Court Gun Rulings',
+            xaxis_title='Year',
+            yaxis_title='Number of Mass Shooting Incidents',
+            height=600,
+            hovermode='closest'
+        )
+
+        return dcc.Graph(figure=fig)
+

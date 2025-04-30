@@ -71,3 +71,22 @@ def load_cleaned_opinion_data():
     df = df[df['Question_Text'] != "Do you have a gun in your home? (version 2)"]
     return df
 
+def load_mass_shooting_counts_by_year():
+    df = pd.read_csv('./mass_shootings_geocoded.csv')
+    df['Incident Date'] = pd.to_datetime(df['Incident Date'], errors='coerce')
+    df['Year'] = df['Incident Date'].dt.year
+    yearly = df.groupby('Year').size().reset_index(name='Incident Count')
+    return yearly
+
+def load_scotus_timeline_data():
+    df = pd.read_csv('./data/SCDeci.csv', index_col=0)
+    df.columns = df.columns.str.strip()
+    df = df.rename(columns={
+        'Second Amendment Supreme Court Cases': 'Case',
+        'Year of Decision': 'Year',
+        '0 - Advocacy for Gun Rights; 1 - Advocacy for Gun Control': 'Stance'
+    })
+    df['Year'] = pd.to_numeric(df['Year'], errors='coerce')
+    df.dropna(subset=['Year', 'Case'], inplace=True)
+    df = df[['Year', 'Case', 'Stance']].drop_duplicates()
+    return df

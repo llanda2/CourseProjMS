@@ -28,6 +28,7 @@ app.layout = dbc.Container([
     ]))),
     dbc.Row(dbc.Col(html.Div(id='controls-container'))),
     dbc.Row(dbc.Col(html.Div(id='visualization-container', children=[
+        html.Div(id='timeline-graph'),
         html.Div(id='incidents-graph'),
         html.Div(id='gunlaws-graph'),
         html.Div(id='opinion-cleaned-graph'),  # NEW: For cleaned opinion data
