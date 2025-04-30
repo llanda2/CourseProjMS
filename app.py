@@ -1,6 +1,6 @@
 # === Import Libraries ===
 import dash
-from dash import dcc, html, Input, Output
+from dash import dcc, html, Input, Output, State
 import pandas as pd
 import plotly.express as px
 
@@ -11,66 +11,63 @@ app.config.suppress_callback_exceptions = True
 server = app.server
 
 # === Load and Process Data ===
-
-# Mass shootings data
+# Load and process mass shootings data
 shootings_df = pd.read_csv('mass_shootings_geocoded.csv')
-
-
-def process_shootings(df):
-    """Cleans and processes mass shooting dataset."""
-    df = df.copy()
-    df['latitude'] = pd.to_numeric(df['latitude'], errors='coerce')
-    df['longitude'] = pd.to_numeric(df['longitude'], errors='coerce')
-    df['Year'] = pd.to_numeric(df["Incident Date"].str.extract(r'(\d{4})')[0], errors='coerce')
-    df['Total Victims'] = df["Victims Killed"] + df["Victims Injured"]
-    df['Full Location'] = df.apply(lambda row: f"{row['Address']}, {row['City Or County']}, {row['State']}, USA",
-                                   axis=1)
-    df = df.dropna(subset=['latitude', 'longitude'])
-    df['Cumulative Year'] = df['Year']
-    return df
-
-
-processed_shootings = process_shootings(shootings_df)
+shootings_df['latitude'] = pd.to_numeric(shootings_df['latitude'], errors='coerce')
+shootings_df['longitude'] = pd.to_numeric(shootings_df['longitude'], errors='coerce')
+shootings_df['Year'] = pd.to_numeric(shootings_df['Incident Date'].str.extract(r'(\d{4})')[0], errors='coerce')
+shootings_df['Total Victims'] = shootings_df['Victims Killed'] + shootings_df['Victims Injured']
+shootings_df['Full Location'] = shootings_df.apply(lambda row: f"{row['Address']}, {row['City Or County']}, {row['State']}, USA", axis=1)
+shootings_df.dropna(subset=['latitude', 'longitude'], inplace=True)
+processed_shootings = shootings_df.copy()
 min_year = int(processed_shootings['Year'].min())
 max_year = int(processed_shootings['Year'].max())
 
-# Gun laws data
-gun_laws_df = pd.read_csv('data/stateLaws.csv')
-gun_laws_df.rename(columns={
-    'Label': 'State',
-    'Strength of Gun Laws (out of 100 points)': 'Law Strength',
-    'Gun Deaths per 100,000 Residents': 'Gun Deaths'
-}, inplace=True)
-
-# Public opinion data
+# Load and clean opinion data
 opinion_paths = {f"LL{i}": f"./data/LL{i}.csv" for i in range(1, 11)}
-opinion_data = {key: pd.read_csv(path) for key, path in opinion_paths.items()}
+
+def clean_opinion_df(df):
+    df = df.copy()
+    df = df[~df.apply(lambda row: all(str(x).strip() in ['%', 'nan', '*'] for x in row), axis=1)]
+    df.dropna(how='all', inplace=True)
+    if not str(df.columns[0]).lower().startswith("date") and "X.1" in df.columns[0]:
+        df.columns = df.iloc[0]
+        df = df.drop(df.index[0])
+    df = df[df.iloc[:, 0].astype(str).str.contains(r"\d{4}", na=False)]
+    df.rename(columns={df.columns[0]: "Date"}, inplace=True)
+    df_melted = df.melt(id_vars="Date", var_name="Response", value_name="Percent")
+    df_melted['Percent'] = df_melted['Percent'].astype(str).str.replace('%', '', regex=False).str.replace('*', '', regex=False).str.strip()
+    df_melted['Percent'] = pd.to_numeric(df_melted['Percent'], errors='coerce')
+    df_melted['Date'] = pd.to_datetime(df_melted['Date'], errors='coerce')
+    df_melted = df_melted.dropna(subset=['Date', 'Percent'])
+    return df_melted
+
+opinion_data = {key: clean_opinion_df(pd.read_csv(path)) for key, path in opinion_paths.items()}
 
 # === App Layout ===
 app.layout = html.Div([
     html.H1("Gun Violence and Legislation Dashboard", style={'textAlign': 'center'}),
-
     dcc.Tabs(id='tabs', value='incidents', children=[
         dcc.Tab(label='Mass Shooting Incidents Map', value='incidents'),
         dcc.Tab(label='Gun Laws & Death Rates Map', value='gunlaws'),
-        dcc.Tab(label='Public Opinion Polls', value='opinion')
+        dcc.Tab(label='Public Opinion Polls', value='opinion'),
+        dcc.Tab(label='Supreme Court & 2A Cases', value='scotus')
     ]),
-
     html.Div(id='controls-container'),
-    html.Div(id='visualization-container')
+    html.Div(id='visualization-container', children=[
+        html.Div(id='incidents-graph'),
+        html.Div(id='gunlaws-graph'),
+        html.Div(id='opinion-graph'),
+        html.Div(id='scotus-graph')
+    ])
 ])
 
-
-# === Callback: Render Controls by Tab ===
-@app.callback(
-    Output('controls-container', 'children'),
-    Input('tabs', 'value')
-)
+# === Render Controls ===
+@app.callback(Output('controls-container', 'children'), Input('tabs', 'value'))
 def render_controls(tab):
     if tab == 'incidents':
         return html.Div([
-            html.H3("Visualization Controls"),
-            html.Label("Size points by:"),
+            html.H3("Controls for Mass Shootings"),
             dcc.RadioItems(
                 id='size-metric',
                 options=[{'label': label, 'value': label} for label in
@@ -78,15 +75,6 @@ def render_controls(tab):
                 value='Total Victims',
                 labelStyle={'display': 'block'}
             ),
-            html.Label("Color points by:"),
-            dcc.RadioItems(
-                id='color-metric',
-                options=[{'label': label, 'value': label} for label in
-                         ['Total Victims', 'Victims Killed', 'Victims Injured']],
-                value='Victims Killed',
-                labelStyle={'display': 'block'}
-            ),
-            html.Label("Year Range:"),
             dcc.RangeSlider(
                 id='year-slider',
                 min=min_year,
@@ -94,70 +82,37 @@ def render_controls(tab):
                 value=[min_year, max_year],
                 marks={i: str(i) for i in range(min_year, max_year + 1)},
                 step=1
-            ),
-            html.Div(id='incidents-count', style={'marginTop': '20px', 'fontWeight': 'bold'})
-        ], style={'padding': '20px'})
-
-    elif tab == 'gunlaws':
-        return html.Div([
-            html.H3("Gun Laws Map Controls"),
-            html.P("This map shows state-level gun law strength and gun death rates."),
-            html.P("Hover over a state for details.")
-        ], style={'padding': '20px'})
-
+            )
+        ])
     elif tab == 'opinion':
         return html.Div([
             html.H3("Select a Poll Question"),
-            dcc.Dropdown(  # ✅ Only ONE Dropdown
+            dcc.Dropdown(
                 id='opinion-selector',
-                options=[
-                    {'label': 'Firearm Law Strictness (1990s–2000s Data)', 'value': 'LL1'},
-                    {'label': 'Gun Ownership (1959–1990s Data, Yes Only)', 'value': 'LL2'},
-                    {'label': 'Firearm Law Strictness (Recent Data 2022–2024)', 'value': 'LL3'},
-                    {'label': 'Gun Ownership (Recent Data 2021–2024)', 'value': 'LL4'},
-                    {'label': 'Satisfaction with U.S. Gun Policies (2022–2025)', 'value': 'LL5'},
-                    {'label': 'Desired Changes to Gun Laws Among Dissatisfied Respondents', 'value': 'LL6'},
-                    {'label': 'Gun Ownership Breakdown: Personal vs Household (2021–2024)', 'value': 'LL7'},
-                    {'label': 'Support for Handgun Ban (2021–2024)', 'value': 'LL8'},
-                    {'label': 'Support for Assault Rifle Ban (2019–2024)', 'value': 'LL9'},
-                    {'label': 'Importance of Gun Control in Voting Decisions (2015–2024)', 'value': 'LL10'},
-                    {'label': 'Reasons for Gun Ownership (Hunting and Others)', 'value': 'LL11'},
-                ],
-                value='LL1',  # Default selected value
-                clearable=False,
-                style={"color": "black"}
+                options=[{'label': k, 'value': k} for k in opinion_data.keys()],
+                value='LL1'
             )
-        ], style={'padding': '20px'})
+        ])
+    return None
 
-
-# === Callback: Render Visualizations ===
-
-# Mass Shooting Incidents Map
+# === Mass Shootings Callback ===
 @app.callback(
-    Output('visualization-container', 'children'),
-    [Input('tabs', 'value'),
-     Input('size-metric', 'value'),
-     Input('color-metric', 'value'),
-     Input('year-slider', 'value')],
-    prevent_initial_call=True
+    Output('incidents-graph', 'children'),
+    Input('tabs', 'value'),
+    Input('size-metric', 'value'),
+    Input('year-slider', 'value')
 )
-def render_incidents_map(tab, size_metric, color_metric, year_range):
+def update_mass_shootings(tab, size_metric, year_range):
     if tab != 'incidents':
-        return dash.no_update
-
+        return None
     filtered_df = processed_shootings[
         (processed_shootings['Year'] >= year_range[0]) &
         (processed_shootings['Year'] <= year_range[1])
-        ]
-
-    expanded_rows = []
-    for year in range(year_range[0], year_range[1] + 1):
-        year_data = filtered_df[filtered_df['Year'] <= year].copy()
-        year_data['Cumulative Year'] = year
-        expanded_rows.append(year_data)
-
-    cumulative_df = pd.concat(expanded_rows, ignore_index=True)
-
+    ]
+    cumulative_df = pd.concat([
+        filtered_df[filtered_df['Year'] <= y].assign(Cumulative_Year=y)
+        for y in range(year_range[0], year_range[1] + 1)
+    ])
     fig = px.scatter_mapbox(
         cumulative_df,
         lat='latitude',
@@ -166,33 +121,22 @@ def render_incidents_map(tab, size_metric, color_metric, year_range):
         color_discrete_sequence=["crimson"],
         hover_name='Full Location',
         hover_data=["Incident Date", "Victims Killed", "Victims Injured", "Total Victims", "State", "City Or County"],
-        animation_frame='Cumulative Year',
+        animation_frame='Cumulative_Year',
         zoom=3,
         height=700,
         size_max=35
     )
-    fig.update_layout(
-        mapbox_style="open-street-map",
-        margin={"r": 0, "t": 40, "l": 0, "b": 0}
-    )
+    fig.update_layout(mapbox_style="open-street-map", margin={"r": 0, "t": 40, "l": 0, "b": 0})
+    return dcc.Graph(figure=fig, style={'height': '80vh'})
 
-    incidents_count = f"Showing {filtered_df.shape[0]} incidents"
-    return [
-        dcc.Graph(figure=fig, style={'height': '80vh'}),
-        html.Div(incidents_count, style={'fontWeight': 'bold', 'marginTop': '10px'})
-    ]
-
-
-# Gun Laws Choropleth Map
+# === Gun Laws Callback ===
 @app.callback(
-    Output('visualization-container', 'children', allow_duplicate=True),
-    Input('tabs', 'value'),
-    prevent_initial_call=True
+    Output('gunlaws-graph', 'children'),
+    Input('tabs', 'value')
 )
-def render_gunlaws_map(tab):
+def update_gunlaws(tab):
     if tab != 'gunlaws':
-        return dash.no_update
-
+        return None
     fig = px.choropleth(
         gun_laws_df,
         locations='State',
@@ -205,42 +149,44 @@ def render_gunlaws_map(tab):
         scope="usa",
         title="Gun Law Strength by State and Gun Death Rates"
     )
-    fig.update_layout(
-        margin={"r": 0, "t": 40, "l": 0, "b": 0},
-        geo=dict(bgcolor='rgba(0,0,0,0)')
-    )
-    fig.update_coloraxes(colorbar_title='Law Strength')
-
-    return [dcc.Graph(figure=fig, style={'height': '80vh'})]
-
-
-# Public Opinion Polls
-@app.callback(
-    Output('visualization-container', 'children', allow_duplicate=True),
-    [Input('tabs', 'value'),
-     Input('opinion-selector', 'value')],
-    prevent_initial_call=True
-)
-def render_opinion_tab(tab, opinion_key):
-    if tab != 'opinion' or opinion_key is None:
-        return dash.no_update
-
-    df = opinion_data[opinion_key].copy()
-    df.columns = df.iloc[0]
-    df = df.drop(df.index[0])
-    df.rename(columns={df.columns[0]: "Date"}, inplace=True)
-
-    df_melted = df.melt(id_vars="Date", var_name="Response", value_name="Percent")
-    df_melted['Percent'] = pd.to_numeric(df_melted['Percent'], errors='coerce')
-
-    fig = px.line(
-        df_melted, x='Date', y='Percent', color='Response',
-        title=f"Public Opinion: {opinion_key}", markers=True
-    )
     fig.update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0})
-
     return dcc.Graph(figure=fig, style={'height': '80vh'})
 
+# === Opinion Poll Callback ===
+@app.callback(
+    Output('opinion-graph', 'children'),
+    Input('tabs', 'value'),
+    Input('opinion-selector', 'value')
+)
+def update_opinion(tab, opinion_key):
+    if tab != 'opinion':
+        return None
+    df = opinion_data.get(opinion_key)
+    if df is None:
+        return html.Div("No data found.")
+    fig = px.line(df, x='Date', y='Percent', color='Response', title=f"Public Opinion: {opinion_key}", markers=True)
+    fig.update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0})
+    return dcc.Graph(figure=fig, style={'height': '80vh'})
+
+# === SCOTUS Callback ===
+@app.callback(
+    Output('scotus-graph', 'children'),
+    Input('tabs', 'value')
+)
+def update_scotus(tab):
+    if tab != 'scotus':
+        return None
+    fig = px.histogram(
+        sc_cases_df,
+        x='Year',
+        color='Stance',
+        color_discrete_map={0: 'green', 1: 'red'},
+        hover_data=['Case', 'Justice', 'Decision Type'],
+        barmode='stack',
+        title='Supreme Court Justices: 2nd Amendment Decisions'
+    )
+    fig.update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0}, xaxis_title='Year', yaxis_title='Number of Opinions')
+    return dcc.Graph(figure=fig, style={'height': '80vh'})
 
 # === Run App ===
 if __name__ == '__main__':
