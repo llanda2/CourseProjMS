@@ -12,7 +12,7 @@ def load_data():
     gun_laws_df['Law Strength'] = pd.to_numeric(gun_laws_df['Law Strength'], errors='coerce')
     gun_laws_df['Gun Deaths'] = pd.to_numeric(gun_laws_df['Gun Deaths'], errors='coerce')
 
-    # ✅ Load and clean SCOTUS data
+    # Load SCOTUS data
     sc_cases_df = pd.read_csv('./data/SCDeci.csv', index_col=0)
     sc_cases_df.columns = sc_cases_df.columns.str.strip()
     sc_cases_df = sc_cases_df.rename(columns={
@@ -36,6 +36,7 @@ def load_data():
         lambda row: f"{row['Address']}, {row['City Or County']}, {row['State']}, USA", axis=1)
     shootings_df.dropna(subset=['latitude', 'longitude'], inplace=True)
 
+    # Load LL1–LL10 public opinion data
     opinion_paths = {f"LL{i}": f"./data/LL{i}.csv" for i in range(1, 11)}
 
     def clean_opinion_df(df):
@@ -62,3 +63,11 @@ def load_data():
         'shootings_df': shootings_df,
         'opinion_data': opinion_data
     }
+
+def load_cleaned_opinion_data():
+    df = pd.read_csv('./data/Cleaned_Public_Opinion_Data.csv')
+    df['Year'] = pd.to_numeric(df['Year'], errors='coerce')
+    df.dropna(subset=['Year', 'Value'], inplace=True)
+    df = df[df['Question_Text'] != "Do you have a gun in your home? (version 2)"]
+    return df
+

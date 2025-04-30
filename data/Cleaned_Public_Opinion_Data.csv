@@ -1,0 +1,214 @@
+Year,Response,Value,Question_ID,Question_Text
+1968.0,No opinion,,LL4,Do you have a gun in your home? (version 2)
+1968.0,"No, do not",50.0,LL4,Do you have a gun in your home? (version 2)
+1968.0,"Yes, do",50.0,LL4,Do you have a gun in your home? (version 2)
+2001.0,No opinion,5.0,LL5,How satisfied are you with the nation's gun policies?
+2001.0,Somewhat dissatisfied,28.0,LL5,How satisfied are you with the nation's gun policies?
+2001.0,Somewhat satisfied,28.0,LL5,How satisfied are you with the nation's gun policies?
+2001.0,Very dissatisfied,29.0,LL5,How satisfied are you with the nation's gun policies?
+2001.0,Very satisfied,10.0,LL5,How satisfied are you with the nation's gun policies?
+2002.0,No opinion,5.0,LL5,How satisfied are you with the nation's gun policies?
+2002.0,Somewhat dissatisfied,24.0,LL5,How satisfied are you with the nation's gun policies?
+2002.0,Somewhat satisfied,35.0,LL5,How satisfied are you with the nation's gun policies?
+2002.0,Very dissatisfied,23.0,LL5,How satisfied are you with the nation's gun policies?
+2002.0,Very satisfied,13.0,LL5,How satisfied are you with the nation's gun policies?
+2003.0,No opinion,6.0,LL5,How satisfied are you with the nation's gun policies?
+2003.0,Somewhat dissatisfied,26.0,LL5,How satisfied are you with the nation's gun policies?
+2003.0,Somewhat satisfied,34.0,LL5,How satisfied are you with the nation's gun policies?
+2003.0,Very dissatisfied,21.0,LL5,How satisfied are you with the nation's gun policies?
+2003.0,Very satisfied,13.0,LL5,How satisfied are you with the nation's gun policies?
+2004.0,No opinion,4.0,LL5,How satisfied are you with the nation's gun policies?
+2004.0,Somewhat dissatisfied,22.0,LL5,How satisfied are you with the nation's gun policies?
+2004.0,Somewhat satisfied,37.0,LL5,How satisfied are you with the nation's gun policies?
+2004.0,Very dissatisfied,23.0,LL5,How satisfied are you with the nation's gun policies?
+2004.0,Very satisfied,14.0,LL5,How satisfied are you with the nation's gun policies?
+2005.0,No opinion,6.0,LL5,How satisfied are you with the nation's gun policies?
+2005.0,Somewhat dissatisfied,21.0,LL5,How satisfied are you with the nation's gun policies?
+2005.0,Somewhat satisfied,36.0,LL5,How satisfied are you with the nation's gun policies?
+2005.0,Very dissatisfied,22.0,LL5,How satisfied are you with the nation's gun policies?
+2005.0,Very satisfied,15.0,LL5,How satisfied are you with the nation's gun policies?
+2006.0,No opinion,9.0,LL5,How satisfied are you with the nation's gun policies?
+2006.0,Somewhat dissatisfied,21.0,LL5,How satisfied are you with the nation's gun policies?
+2006.0,Somewhat satisfied,32.0,LL5,How satisfied are you with the nation's gun policies?
+2006.0,Very dissatisfied,22.0,LL5,How satisfied are you with the nation's gun policies?
+2006.0,Very satisfied,16.0,LL5,How satisfied are you with the nation's gun policies?
+2007.0,No opinion,7.0,LL5,How satisfied are you with the nation's gun policies?
+2007.0,Somewhat dissatisfied,21.0,LL5,How satisfied are you with the nation's gun policies?
+2007.0,Somewhat satisfied,33.0,LL5,How satisfied are you with the nation's gun policies?
+2007.0,Very dissatisfied,22.0,LL5,How satisfied are you with the nation's gun policies?
+2007.0,Very satisfied,17.0,LL5,How satisfied are you with the nation's gun policies?
+2008.0,No opinion,7.0,LL5,How satisfied are you with the nation's gun policies?
+2008.0,Somewhat dissatisfied,23.0,LL5,How satisfied are you with the nation's gun policies?
+2008.0,Somewhat satisfied,34.0,LL5,How satisfied are you with the nation's gun policies?
+2008.0,Very dissatisfied,21.0,LL5,How satisfied are you with the nation's gun policies?
+2008.0,Very satisfied,14.0,LL5,How satisfied are you with the nation's gun policies?
+2012.0,No opinion,8.0,LL5,How satisfied are you with the nation's gun policies?
+2012.0,Somewhat dissatisfied,19.0,LL5,How satisfied are you with the nation's gun policies?
+2012.0,Somewhat satisfied,36.0,LL5,How satisfied are you with the nation's gun policies?
+2012.0,Very dissatisfied,23.0,LL5,How satisfied are you with the nation's gun policies?
+2012.0,Very satisfied,14.0,LL5,How satisfied are you with the nation's gun policies?
+2013.0,No opinion,5.0,LL5,How satisfied are you with the nation's gun policies?
+2013.0,Somewhat dissatisfied,21.0,LL5,How satisfied are you with the nation's gun policies?
+2013.0,Somewhat satisfied,31.0,LL5,How satisfied are you with the nation's gun policies?
+2013.0,Very dissatisfied,30.0,LL5,How satisfied are you with the nation's gun policies?
+2013.0,Very satisfied,12.0,LL5,How satisfied are you with the nation's gun policies?
+2014.0,No opinion,5.0,LL5,How satisfied are you with the nation's gun policies?
+2014.0,Somewhat dissatisfied,20.0,LL5,How satisfied are you with the nation's gun policies?
+2014.0,Somewhat satisfied,28.0,LL5,How satisfied are you with the nation's gun policies?
+2014.0,Very dissatisfied,35.0,LL5,How satisfied are you with the nation's gun policies?
+2014.0,Very satisfied,12.0,LL5,How satisfied are you with the nation's gun policies?
+2015.0,No opinion,6.0,LL5,How satisfied are you with the nation's gun policies?
+2015.0,Somewhat dissatisfied,23.0,LL5,How satisfied are you with the nation's gun policies?
+2015.0,Somewhat satisfied,30.0,LL5,How satisfied are you with the nation's gun policies?
+2015.0,Very dissatisfied,28.0,LL5,How satisfied are you with the nation's gun policies?
+2015.0,Very satisfied,12.0,LL5,How satisfied are you with the nation's gun policies?
+2016.0,No opinion,4.0,LL5,How satisfied are you with the nation's gun policies?
+2016.0,Somewhat dissatisfied,24.0,LL5,How satisfied are you with the nation's gun policies?
+2016.0,Somewhat satisfied,25.0,LL5,How satisfied are you with the nation's gun policies?
+2016.0,Very dissatisfied,38.0,LL5,How satisfied are you with the nation's gun policies?
+2016.0,Very satisfied,9.0,LL5,How satisfied are you with the nation's gun policies?
+2017.0,No opinion,5.0,LL5,How satisfied are you with the nation's gun policies?
+2017.0,Somewhat dissatisfied,23.0,LL5,How satisfied are you with the nation's gun policies?
+2017.0,Somewhat satisfied,29.0,LL5,How satisfied are you with the nation's gun policies?
+2017.0,Very dissatisfied,31.0,LL5,How satisfied are you with the nation's gun policies?
+2017.0,Very satisfied,13.0,LL5,How satisfied are you with the nation's gun policies?
+2018.0,No opinion,2.0,LL5,How satisfied are you with the nation's gun policies?
+2018.0,Somewhat dissatisfied,20.0,LL5,How satisfied are you with the nation's gun policies?
+2018.0,Somewhat satisfied,24.0,LL5,How satisfied are you with the nation's gun policies?
+2018.0,Very dissatisfied,39.0,LL5,How satisfied are you with the nation's gun policies?
+2018.0,Very satisfied,15.0,LL5,How satisfied are you with the nation's gun policies?
+2019.0,No opinion,4.0,LL5,How satisfied are you with the nation's gun policies?
+2019.0,Somewhat dissatisfied,16.0,LL5,How satisfied are you with the nation's gun policies?
+2019.0,Somewhat satisfied,24.0,LL5,How satisfied are you with the nation's gun policies?
+2019.0,Very dissatisfied,40.0,LL5,How satisfied are you with the nation's gun policies?
+2019.0,Very satisfied,15.0,LL5,How satisfied are you with the nation's gun policies?
+2020.0,No opinion,3.0,LL5,How satisfied are you with the nation's gun policies?
+2020.0,Somewhat dissatisfied,19.0,LL5,How satisfied are you with the nation's gun policies?
+2020.0,Somewhat satisfied,25.0,LL5,How satisfied are you with the nation's gun policies?
+2020.0,Very dissatisfied,36.0,LL5,How satisfied are you with the nation's gun policies?
+2020.0,Very satisfied,17.0,LL5,How satisfied are you with the nation's gun policies?
+2021.0,No opinion,2.0,LL5,How satisfied are you with the nation's gun policies?
+2021.0,Somewhat dissatisfied,23.0,LL5,How satisfied are you with the nation's gun policies?
+2021.0,Somewhat satisfied,22.0,LL5,How satisfied are you with the nation's gun policies?
+2021.0,Very dissatisfied,33.0,LL5,How satisfied are you with the nation's gun policies?
+2021.0,Very satisfied,20.0,LL5,How satisfied are you with the nation's gun policies?
+2022.0,No opinion,3.0,LL5,How satisfied are you with the nation's gun policies?
+2022.0,Somewhat dissatisfied,19.0,LL5,How satisfied are you with the nation's gun policies?
+2022.0,Somewhat satisfied,28.0,LL5,How satisfied are you with the nation's gun policies?
+2022.0,Very dissatisfied,37.0,LL5,How satisfied are you with the nation's gun policies?
+2022.0,Very satisfied,13.0,LL5,How satisfied are you with the nation's gun policies?
+2023.0,No opinion,3.0,LL5,How satisfied are you with the nation's gun policies?
+2023.0,Somewhat dissatisfied,23.0,LL5,How satisfied are you with the nation's gun policies?
+2023.0,Somewhat satisfied,24.0,LL5,How satisfied are you with the nation's gun policies?
+2023.0,Very dissatisfied,40.0,LL5,How satisfied are you with the nation's gun policies?
+2023.0,Very satisfied,10.0,LL5,How satisfied are you with the nation's gun policies?
+2024.0,No opinion,4.0,LL5,How satisfied are you with the nation's gun policies?
+2024.0,Somewhat dissatisfied,19.0,LL5,How satisfied are you with the nation's gun policies?
+2024.0,Somewhat satisfied,19.0,LL5,How satisfied are you with the nation's gun policies?
+2024.0,Very dissatisfied,45.0,LL5,How satisfied are you with the nation's gun policies?
+2024.0,Very satisfied,12.0,LL5,How satisfied are you with the nation's gun policies?
+2025.0,No opinion,3.0,LL5,How satisfied are you with the nation's gun policies?
+2025.0,Somewhat dissatisfied,21.0,LL5,How satisfied are you with the nation's gun policies?
+2025.0,Somewhat satisfied,27.0,LL5,How satisfied are you with the nation's gun policies?
+2025.0,Very dissatisfied,37.0,LL5,How satisfied are you with the nation's gun policies?
+2025.0,Very satisfied,10.0,LL5,How satisfied are you with the nation's gun policies?
+2001.0,"Dissatisfied, keep the same",9.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2001.0,"Dissatisfied, want less strict",9.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2001.0,"Dissatisfied, want stricter",39.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2001.0,No opinion,6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2001.0,Total satisfied,38.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2002.0,"Dissatisfied, keep the same",6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2002.0,"Dissatisfied, want less strict",8.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2002.0,"Dissatisfied, want stricter",33.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2002.0,No opinion,5.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2002.0,Total satisfied,48.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2003.0,"Dissatisfied, keep the same",6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2003.0,"Dissatisfied, want less strict",9.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2003.0,"Dissatisfied, want stricter",32.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2003.0,No opinion,6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2003.0,Total satisfied,47.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2004.0,"Dissatisfied, keep the same",6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2004.0,"Dissatisfied, want less strict",6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2004.0,"Dissatisfied, want stricter",33.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2004.0,No opinion,4.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2004.0,Total satisfied,51.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2005.0,"Dissatisfied, keep the same",5.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2005.0,"Dissatisfied, want less strict",6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2005.0,"Dissatisfied, want stricter",32.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2005.0,No opinion,6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2005.0,Total satisfied,51.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2006.0,"Dissatisfied, keep the same",4.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2006.0,"Dissatisfied, want less strict",7.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2006.0,"Dissatisfied, want stricter",32.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2006.0,No opinion,9.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2006.0,Total satisfied,47.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2007.0,"Dissatisfied, keep the same",7.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2007.0,"Dissatisfied, want less strict",6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2007.0,"Dissatisfied, want stricter",30.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2007.0,No opinion,7.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2007.0,Total satisfied,50.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2008.0,"Dissatisfied, keep the same",6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2008.0,"Dissatisfied, want less strict",8.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2008.0,"Dissatisfied, want stricter",30.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2008.0,No opinion,7.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2008.0,Total satisfied,49.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2012.0,"Dissatisfied, keep the same",9.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2012.0,"Dissatisfied, want less strict",8.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2012.0,"Dissatisfied, want stricter",25.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2012.0,No opinion,8.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2012.0,Total satisfied,50.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2013.0,"Dissatisfied, keep the same",8.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2013.0,"Dissatisfied, want less strict",5.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2013.0,"Dissatisfied, want stricter",38.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2013.0,No opinion,5.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2013.0,Total satisfied,43.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2014.0,"Dissatisfied, keep the same",8.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2014.0,"Dissatisfied, want less strict",16.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2014.0,"Dissatisfied, want stricter",31.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2014.0,No opinion,5.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2014.0,Total satisfied,40.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2015.0,"Dissatisfied, keep the same",8.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2015.0,"Dissatisfied, want less strict",12.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2015.0,"Dissatisfied, want stricter",31.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2015.0,No opinion,6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2015.0,Total satisfied,42.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2016.0,"Dissatisfied, keep the same",9.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2016.0,"Dissatisfied, want less strict",15.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2016.0,"Dissatisfied, want stricter",38.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2016.0,No opinion,4.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2016.0,Total satisfied,34.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2017.0,"Dissatisfied, keep the same",6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2017.0,"Dissatisfied, want less strict",11.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2017.0,"Dissatisfied, want stricter",37.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2017.0,No opinion,5.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2017.0,Total satisfied,42.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2018.0,"Dissatisfied, keep the same",5.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2018.0,"Dissatisfied, want less strict",8.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2018.0,"Dissatisfied, want stricter",46.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2018.0,No opinion,2.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2018.0,Total satisfied,39.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2020.0,"Dissatisfied, keep the same",5.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2020.0,"Dissatisfied, want less strict",9.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2020.0,"Dissatisfied, want stricter",42.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2020.0,No opinion,3.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2020.0,Total satisfied,42.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2021.0,"Dissatisfied, keep the same",7.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2021.0,"Dissatisfied, want less strict",8.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2021.0,"Dissatisfied, want stricter",41.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2021.0,No opinion,2.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2021.0,Total satisfied,42.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2022.0,"Dissatisfied, keep the same",7.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2022.0,"Dissatisfied, want less strict",13.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2022.0,"Dissatisfied, want stricter",36.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2022.0,No opinion,3.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2022.0,Total satisfied,41.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2024.0,"Dissatisfied, keep the same",5.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2024.0,"Dissatisfied, want less strict",13.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2024.0,"Dissatisfied, want stricter",46.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2024.0,No opinion,4.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2024.0,Total satisfied,31.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2025.0,"Dissatisfied, keep the same",6.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2025.0,"Dissatisfied, want less strict",12.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2025.0,"Dissatisfied, want stricter",40.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2025.0,No opinion,4.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"
+2025.0,Total satisfied,37.0,LL6,"If dissatisfied, should gun laws be stricter, looser, or the same?"

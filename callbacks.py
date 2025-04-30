@@ -2,12 +2,56 @@ from dash import dcc, html, Input, Output, State, callback_context, MATCH, ALL
 import plotly.express as px
 import pandas as pd
 import dash_bootstrap_components as dbc
+from utils import load_cleaned_opinion_data
 
 
 def register_callbacks(app, DATA):
     shootings_df = DATA['shootings_df']
     min_year = int(shootings_df['Year'].min())
     max_year = int(shootings_df['Year'].max())
+    cleaned_opinion_df = load_cleaned_opinion_data()
+
+    @app.callback(
+        Output('opinion-cleaned-graph', 'children'),
+        Input('tabs', 'value')
+    )
+    def render_cleaned_opinion_tab(tab):
+        if tab != 'opinion':
+            return None
+
+        options = [{'label': q, 'value': q} for q in cleaned_opinion_df['Question_Text'].unique()]
+
+        return html.Div([
+            html.Hr(),
+            html.H4("Explore Cleaned Opinion Trends"),
+            dcc.Dropdown(
+                id='cleaned-opinion-selector',
+                options=options,
+                value=options[0]['value'] if options else None,
+                style={'marginBottom': '1rem'}
+            ),
+            dcc.Graph(id='cleaned-opinion-chart')
+        ])
+
+    @app.callback(
+        Output('cleaned-opinion-chart', 'figure'),
+        Input('cleaned-opinion-selector', 'value')
+    )
+    def update_cleaned_opinion_chart(question):
+        if not question:
+            return px.line(title="No question selected.")
+
+        filtered = cleaned_opinion_df[cleaned_opinion_df['Question_Text'] == question]
+        fig = px.line(
+            filtered,
+            x='Year',
+            y='Value',
+            color='Response',
+            title=question,
+            markers=True
+        )
+        fig.update_layout(legend_title_text='Response')
+        return fig
 
     # === Mass Shooting Map ===
     @app.callback(
@@ -103,55 +147,6 @@ def register_callbacks(app, DATA):
             scope="usa",
             title="Gun Law Strength by State and Gun Death Rates"
         )
-        fig.update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0})
-        return dcc.Graph(figure=fig, style={'height': '80vh'})
-
-    # === Opinion Polls Line Chart ===
-    @app.callback(
-        Output('opinion-graph', 'children'),
-        Input('tabs', 'value')
-    )
-    def update_opinion(tab):
-        # First check if we're on the right tab
-        if tab != 'opinion':
-            return None
-
-        # Default opinion key
-        opinion_key = None
-        # Check if opinion data exists and get the first key or use a placeholder
-        if DATA.get('opinion_data') and len(DATA['opinion_data']) > 0:
-            opinion_key = list(DATA['opinion_data'].keys())[0]
-        else:
-            return html.Div("No opinion poll data available.")
-
-        # Get data for the selected opinion poll
-        df = DATA['opinion_data'].get(opinion_key)
-        if df is None:
-            return html.Div("No data found for selected poll.")
-
-        # Create the chart
-        fig = px.line(df, x='Date', y='Percent', color='Response', title=f"Public Opinion: {opinion_key}", markers=True)
-        fig.update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0})
-        return dcc.Graph(figure=fig, style={'height': '80vh'})
-
-    # === Update Opinion Chart based on selector ===
-    @app.callback(
-        Output('opinion-graph', 'children', allow_duplicate=True),
-        Input('opinion-selector', 'value'),
-        prevent_initial_call=True
-    )
-    def update_opinion_selector(opinion_key):
-        # If opinion_key is None, return
-        if opinion_key is None:
-            return None
-
-        # Get data for the selected opinion poll
-        df = DATA['opinion_data'].get(opinion_key)
-        if df is None:
-            return html.Div("No data found for selected poll.")
-
-        # Create the chart
-        fig = px.line(df, x='Date', y='Percent', color='Response', title=f"Public Opinion: {opinion_key}", markers=True)
         fig.update_layout(margin={"r": 0, "t": 40, "l": 0, "b": 0})
         return dcc.Graph(figure=fig, style={'height': '80vh'})
 
@@ -470,23 +465,6 @@ def register_callbacks(app, DATA):
                     step=1
                 )
             ])
-        elif tab == 'opinion':
-            # Make sure we have opinion data before creating the dropdown
-            if DATA.get('opinion_data') and len(DATA['opinion_data']) > 0:
-                default_value = list(DATA['opinion_data'].keys())[0]
-                return html.Div([
-                    html.H3("Select a Poll Question"),
-                    dcc.Dropdown(
-                        id='opinion-selector',
-                        options=[{'label': k, 'value': k} for k in DATA['opinion_data'].keys()],
-                        value=default_value
-                    )
-                ])
-            else:
-                return html.Div([
-                    html.H3("Opinion Polls"),
-                    html.P("No opinion poll data available.")
-                ])
 
         # Default empty container for other tabs
         return html.Div([])
