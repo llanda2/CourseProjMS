@@ -26,7 +26,6 @@ def load_data():
     })
     sc_cases_df['Year'] = pd.to_numeric(sc_cases_df['Year'], errors='coerce')
     sc_cases_df['Stance'] = pd.to_numeric(sc_cases_df['Stance'], errors='coerce')
-    print("✅ Final SCOTUS columns:", sc_cases_df.columns.tolist())
 
     shootings_df = pd.read_csv('mass_shootings_geocoded.csv')
     shootings_df['latitude'] = pd.to_numeric(shootings_df['latitude'], errors='coerce')
