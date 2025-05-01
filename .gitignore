@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.env/
+
+# VS Code settings
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# PyCharm
+.idea/
+
+# CSVs or data (optional, if large or private)
+data/*.csv
+
+# Output files
+*.log
+*.pdf
+*.ipynb_checkpoints/
